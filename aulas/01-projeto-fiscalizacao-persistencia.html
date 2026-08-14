@@ -210,7 +210,7 @@
 Ricardo Pasquati Pontarolli 
 </div>
         <p class="quarto-title-affiliation">
-            Técnico em Redes de Computadores · IFSP Boituva · pasquati@ifsp.edu.br · v1
+            Técnico em Redes de Computadores · IFSP Boituva · pasquati@ifsp.edu.br · v3
           </p>
     </div>
 </div>
@@ -221,10 +221,12 @@ Ricardo Pasquati Pontarolli
 <ul>
 <li>Modelar o banco de dados que vai guardar as leituras de velocidade do projeto</li>
 <li>Sair do requisito → modelo conceitual → modelo lógico → modelo físico → SQL</li>
-<li>Colocar o banco do grupo no ar e testar os três jeitos de acessá-lo (texto, gráfico, aplicação)</li>
+<li>Instalar e configurar o SGBD <strong>no próprio Raspberry Pi</strong>, via container</li>
+<li>Colocar o banco do grupo no ar, <strong>cada integrante com sua própria entrega</strong></li>
 </ul>
 <aside class="notes">
-<p>Esta é a aula de Banco de Dados dentro do projeto integrador que vocês já conhecem de Computação em Nuvem e Virtualização (RPi como nó de borda) e Redes sem Fio (rede do RPi). Hoje o recorte é: onde e como os dados de cada leitura de velocidade vão ser guardados, de forma que dê pra consultar depois quem cometeu quantas infrações.</p>
+<p>No 1º semestre a turma já praticou SQL no Neon (Postgres gerenciado na nuvem). Agora, no 2º semestre, a persistência do projeto passa a rodar <strong>localmente no Raspberry Pi</strong>, via Docker — reforça a ideia de “nó de borda” (o dado processado e guardado no mesmo lugar, sem depender de um serviço externo) e cobre o item da ementa “instalação e configuração de um SGBD”, que o Neon (já pronto, gerenciado por terceiros) não exercitava.</p>
+<p>Mudança deliberada nesta versão da aula: em turmas anteriores, com uma única entrega por grupo, era comum 2 de 5 integrantes não participarem. A atividade de hoje foi dividida em 5 papéis com entrega individual rastreável por commit — ver bloco “Mão na massa”.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -242,15 +244,15 @@ Ricardo Pasquati Pontarolli
 <ul>
 <li>A prefeitura quer saber se os veículos ultrapassam o <strong>limite de velocidade</strong>, sem instalar radares</li>
 <li>Cada grupo simula um <strong>veículo</strong> (carro, ônibus, patinete elétrico…) rodando uma <strong>rota fixa</strong> de trechos com limite</li>
-<li>O Raspberry Pi (nó de borda) recebe as leituras de velocidade via MQTT e compara com o limite do trecho</li>
-<li><strong>Hoje:</strong> e depois que a leitura foi comparada — onde ela fica guardada?</li>
+<li>O Raspberry Pi (nó de borda) já roda Docker, Portainer e o broker MQTT (de CNVI)</li>
+<li><strong>Hoje:</strong> depois que a leitura for comparada com o limite, onde ela fica guardada?</li>
 </ul>
 </section>
 <section id="onde-entra-o-banco-de-dados" class="slide level2">
 <h2>Onde entra o Banco de Dados</h2>
 <ul>
 <li>Sem persistência, cada leitura se perde assim que chega — não dá pra provar nada depois</li>
-<li>O banco de dados guarda: os veículos, a rota de cada um (trechos e limites) e cada leitura registrada</li>
+<li>O banco de dados guarda: o veículo, a legislação das vias, a rota de cada um e cada leitura registrada</li>
 <li>É a partir dele que se responde: <em>“quantas infrações o ônibus do grupo 3 cometeu na rota simulada?”</em></li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -295,19 +297,19 @@ Ricardo Pasquati Pontarolli
 </tr>
 <tr class="even">
 <td>Modelo Relacional + mapeamento ER→Relacional</td>
-<td>Tabelas <code>veiculo</code>, <code>trecho</code>, <code>leitura</code></td>
+<td>Tabelas <code>veiculo</code>, <code>via</code>, <code>trecho</code>, <code>leitura</code></td>
 </tr>
 <tr class="odd">
 <td>DDL e DML</td>
-<td><code>CREATE TABLE</code> e <code>INSERT</code>/<code>SELECT</code></td>
+<td><code>CREATE TABLE</code> e <code>INSERT</code>/<code>SELECT</code>, um por papel</td>
 </tr>
 <tr class="even">
 <td>Instalação/configuração de SGBD</td>
-<td>Criar o banco Postgres no Neon</td>
+<td>Deploy do Postgres via Docker/Portainer no RPi</td>
 </tr>
 <tr class="odd">
 <td>Acesso em modo texto e gráfico</td>
-<td><code>psql</code> e o SQL Editor do Neon</td>
+<td><code>psql</code> e DBeaver/pgAdmin, direto no RPi</td>
 </tr>
 <tr class="even">
 <td>Acesso por uma aplicação</td>
@@ -328,27 +330,27 @@ Ricardo Pasquati Pontarolli
 <tbody>
 <tr class="odd">
 <td>Onde o BD entra no projeto</td>
-<td>10</td>
+<td>8</td>
 </tr>
 <tr class="even">
 <td>Requisitos → Modelo Conceitual (ER)</td>
 <td>15</td>
 </tr>
 <tr class="odd">
-<td>Modelo Lógico e Físico (escolha do SGBD)</td>
-<td>10</td>
+<td>Modelo Lógico e Físico + Postgres no RPi</td>
+<td>12</td>
 </tr>
 <tr class="even">
-<td>SQL: DDL e DML</td>
-<td>15</td>
+<td>SQL: DDL e DML (visão geral)</td>
+<td>10</td>
 </tr>
 <tr class="odd">
-<td>Acesso: texto, gráfico e aplicação</td>
-<td>10</td>
+<td>Acesso: texto, gráfico e aplicação (visão geral)</td>
+<td>5</td>
 </tr>
 <tr class="even">
-<td><strong>Mão na massa</strong> — banco do grupo no ar</td>
-<td>25</td>
+<td><strong>Mão na massa</strong> — banco do grupo + 5 papéis</td>
+<td>35</td>
 </tr>
 <tr class="odd">
 <td>Encerramento e próxima aula</td>
@@ -361,13 +363,14 @@ Ricardo Pasquati Pontarolli
 <h2>Levantamento de requisitos</h2>
 <p>Antes de desenhar qualquer tabela, perguntar: <strong>o que o banco precisa responder?</strong></p>
 <ul>
-<li class="fragment">Qual é a rota do meu veículo, e qual o limite de cada trecho dela?</li>
-<li class="fragment">Qual foi a velocidade em cada leitura, e o veículo estava em qual trecho?</li>
-<li class="fragment">Aquela leitura foi uma infração ou não?</li>
+<li class="fragment">Quais são as características do meu veículo (marca, modelo, teto de velocidade)?</li>
+<li class="fragment">Qual a legislação de cada tipo de via (limite legal daquele trecho)?</li>
+<li class="fragment">Qual é a rota do meu veículo — em que ordem ele passa por cada via?</li>
+<li class="fragment">Qual foi a velocidade em cada leitura, e ela foi uma infração ou não?</li>
 <li class="fragment">Quantas infrações o veículo cometeu, no total e por trecho?</li>
 </ul>
 <aside class="notes">
-<p>Essas quatro perguntas já bastam para chegar às entidades do modelo conceitual. Vale perguntar à turma antes de revelar o próximo slide: “que entidades vocês tirariam dessas perguntas?”</p>
+<p>Essas cinco perguntas já bastam para chegar às quatro entidades do modelo conceitual — e, não por acaso, cada uma delas vira o papel de um integrante do grupo daqui a pouco. Vale perguntar à turma antes de revelar o próximo slide: “que entidades vocês tirariam dessas perguntas?”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -383,8 +386,9 @@ Ricardo Pasquati Pontarolli
 <section id="modelo-conceitual-as-entidades" class="slide level2">
 <h2>Modelo Conceitual — as entidades</h2>
 <ul>
-<li><strong>Veículo</strong> — o veículo simulado pelo grupo (tipo, teto próprio de velocidade, se houver)</li>
-<li><strong>Trecho</strong> — um pedaço da rota fixa do veículo (tipo de via, limite daquele trecho, posição na rota)</li>
+<li><strong>Veículo</strong> — o veículo simulado pelo grupo (marca, modelo, tipo, teto próprio, se houver)</li>
+<li><strong>Via</strong> — um tipo de via e o limite de velocidade <strong>definido por lei</strong> para ela (local, coletora, arterial…)</li>
+<li><strong>Trecho</strong> — um passo da rota fixa do veículo: qual via, em que ordem</li>
 <li><strong>Leitura</strong> — um registro de velocidade em um instante, em um trecho, de um veículo</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -396,7 +400,7 @@ Ricardo Pasquati Pontarolli
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Reparem que a <strong>regra de negócio</strong> (limite normal / teto do veículo / via restrita) não vira uma 4ª entidade — ela já foi resolvida no microsserviço de CNVI antes do dado chegar aqui. O banco só guarda o resultado: qual era o limite aplicado naquela leitura.</p>
+<p>Reparem que a <strong>regra de negócio</strong> do veículo (limite normal / teto próprio / via restrita) não vira uma 5ª entidade — ela é lógica aplicada na hora de calcular <code>limite_aplicado</code>, cruzando <code>via.limite_legal</code> com <code>veiculo.teto_proprio</code>. O banco guarda o resultado, não a regra em si.</p>
 </div>
 </div>
 </div>
@@ -409,22 +413,29 @@ Ricardo Pasquati Pontarolli
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">erDiagram
-    VEICULO ||--o{ TRECHO : possui
+    VEICULO ||--o{ TRECHO : "faz a rota por"
+    VIA ||--o{ TRECHO : "é usada em"
     VEICULO ||--o{ LEITURA : gera
     TRECHO ||--o{ LEITURA : registra
 
     VEICULO {
         int id PK
         string grupo
+        string marca
+        string modelo
         string tipo
         numeric teto_proprio
+    }
+    VIA {
+        int id PK
+        string tipo_via
+        numeric limite_legal
     }
     TRECHO {
         int id PK
         int veiculo_id FK
+        int via_id FK
         int ordem
-        string tipo_via
-        numeric limite_via
     }
     LEITURA {
         int id PK
@@ -447,7 +458,8 @@ Ricardo Pasquati Pontarolli
 <p>Regras de mapeamento ER → Relacional aplicadas aqui:</p>
 <ul>
 <li class="fragment">Toda entidade vira uma <strong>tabela</strong>, todo atributo vira uma <strong>coluna</strong></li>
-<li class="fragment">Relacionamento 1:N (Veículo → Trecho, Veículo → Leitura, Trecho → Leitura) vira <strong>chave estrangeira</strong> do lado “N”</li>
+<li class="fragment">Relacionamento 1:N vira <strong>chave estrangeira</strong> do lado “N”</li>
+<li class="fragment"><code>Trecho</code> depende de <code>Veículo</code> <strong>e</strong> de <code>Via</code> → duas FKs na mesma tabela</li>
 <li class="fragment"><code>Leitura</code> depende de <code>Veículo</code> <strong>e</strong> de <code>Trecho</code> → duas FKs na mesma tabela</li>
 <li class="fragment">Cada tabela precisa de uma <strong>chave primária</strong> — aqui, um <code>id</code> autoincremental</li>
 </ul>
@@ -455,16 +467,12 @@ Ricardo Pasquati Pontarolli
 <section id="modelo-lógico-as-tabelas" class="slide level2">
 <h2>Modelo Lógico — as tabelas</h2>
 <table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Tabela</th>
 <th>Chave primária</th>
 <th>Chaves estrangeiras</th>
+<th>Papel dono</th>
 </tr>
 </thead>
 <tbody>
@@ -472,21 +480,30 @@ Ricardo Pasquati Pontarolli
 <td><code>veiculo</code></td>
 <td><code>id</code></td>
 <td>—</td>
+<td>Integrante 1</td>
 </tr>
 <tr class="even">
-<td><code>trecho</code></td>
+<td><code>via</code></td>
 <td><code>id</code></td>
-<td><code>veiculo_id</code> → <code>veiculo.id</code></td>
+<td>—</td>
+<td>Integrante 2</td>
 </tr>
 <tr class="odd">
+<td><code>trecho</code></td>
+<td><code>id</code></td>
+<td><code>veiculo_id</code>, <code>via_id</code></td>
+<td>Integrante 3</td>
+</tr>
+<tr class="even">
 <td><code>leitura</code></td>
 <td><code>id</code></td>
-<td><code>veiculo_id</code> → <code>veiculo.id</code>, <code>trecho_id</code> → <code>trecho.id</code></td>
+<td><code>veiculo_id</code>, <code>trecho_id</code></td>
+<td>Integrante 4</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Essa é a tabela que vai virar o CREATE TABLE direto, sem surpresas — o modelo lógico já é praticamente o esqueleto do DDL.</p>
+<p>Essa é a tabela que vai virar o CREATE TABLE direto, sem surpresas — o modelo lógico já é praticamente o esqueleto do DDL. A coluna “papel dono” já antecipa a divisão de trabalho de daqui a pouco.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -503,17 +520,38 @@ Ricardo Pasquati Pontarolli
 <h2>Modelo Físico — escolha do SGBD</h2>
 <ul>
 <li><strong>Modelo físico</strong> = decisões concretas de implementação: qual SGBD, quais tipos de dado, índices, etc.</li>
-<li>Vamos usar <strong>PostgreSQL</strong>, gerenciado pelo <strong>Neon</strong> (<code>neon.com</code>) — free tier, Postgres na nuvem, sem instalar nada localmente</li>
-<li>Cada grupo cria <strong>seu próprio banco</strong> no Neon (um projeto por grupo)</li>
+<li>Vamos usar <strong>PostgreSQL</strong>, mesma sintaxe que vocês já praticaram no Neon — só que agora rodando <strong>em container, no Raspberry Pi</strong></li>
+<li><strong>Um Postgres por Raspberry Pi</strong>, compartilhado entre os grupos daquele nó — cada grupo com seu próprio banco e usuário</li>
 </ul>
 </section>
-<section id="por-que-não-postgres-local-no-raspberry-pi" class="slide level2">
-<h2>Por que não Postgres local no Raspberry Pi?</h2>
+<section id="por-que-um-postgres-compartilhado-não-um-container-por-grupo" class="slide level2">
+<h2>Por que um Postgres compartilhado, não um container por grupo?</h2>
 <ul>
-<li class="fragment">Os 5 Raspberry Pi já são <strong>compartilhados por 8 grupos</strong> — rodar 8 bancos locais no mesmo RPi disputaria RAM/disco com o Docker/MQTT de CNVI</li>
-<li class="fragment">Um banco <strong>gerenciado na nuvem</strong> é exatamente o tipo de decisão de infraestrutura que a prefeitura tomaria de verdade</li>
-<li class="fragment">O RPi continua no papel de nó de borda: ele processa a leitura e <strong>envia</strong> o resultado para o banco, não guarda os dados localmente</li>
+<li class="fragment">O RPi 3B+ tem só <strong>1 GB de RAM</strong>, já dividido entre Docker, Portainer, Mosquitto e o microsserviço Moleculer de cada grupo que usa aquele nó</li>
+<li class="fragment">Um Postgres ajustado (buffers pequenos) roda tranquilo nesse espaço — <strong>oito</strong> Postgres (um por grupo) espalhados em 5 nós, não</li>
+<li class="fragment">Um único Postgres atendendo vários bancos é <strong>o mesmo modelo do Neon</strong> (um serviço multi-tenant) — só que rodando na borda, não na nuvem de terceiros</li>
+<li class="fragment">É também o mesmo padrão que vocês já usam nos tópicos MQTT: infraestrutura compartilhada, cada grupo identificado pelo seu próprio nome/veículo</li>
 </ul>
+</section>
+<section id="instalação-e-configuração-docker-compose" class="slide level2">
+<h2>Instalação e configuração — Docker Compose</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb1-2"><a></a><span class="at">  </span><span class="fu">postgres</span><span class="kw">:</span></span>
+<span id="cb1-3"><a></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgres:16-alpine</span></span>
+<span id="cb1-4"><a></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgres-fiscalizacao</span></span>
+<span id="cb1-5"><a></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> unless-stopped</span></span>
+<span id="cb1-6"><a></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb1-7"><a></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> </span><span class="st">"combinada-em-sala"</span></span>
+<span id="cb1-8"><a></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> pgdata:/var/lib/postgresql/data</span></span>
+<span id="cb1-10"><a></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-11"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span></span>
+<span id="cb1-12"><a></a><span class="fu">    command</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb1-13"><a></a>      postgres -c shared_buffers=16MB</span>
+<span id="cb1-14"><a></a>               -c max_connections=20</span>
+<span id="cb1-15"><a></a>               -c work_mem=4MB</span>
+<span id="cb1-16"><a></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-17"><a></a><span class="at">  </span><span class="fu">pgdata</span><span class="kw">:</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -523,49 +561,73 @@ Ricardo Pasquati Pontarolli
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Isso não impede testar Postgres local em container via Portainer como exercício à parte (fica combinado com o professor de CNVI) — mas o banco <strong>oficial do grupo</strong>, que vale a entrega de hoje, é o do Neon.</p>
+<p>Suba isso pelo <strong>Portainer</strong> (Stacks → Add stack), do mesmo jeito que já fizeram com o Mosquitto. Os parâmetros <code>-c</code> reduzem o consumo de memória do Postgres, que por padrão reservaria bem mais RAM do que o RPi tem sobrando. Se o Postgres do seu nó <strong>já existir</strong> (outro grupo subiu primeiro), pulem direto para o próximo passo.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="cada-grupo-cria-o-seu-banco" class="slide level2">
+<h2>Cada grupo cria o seu banco</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a></a><span class="co">-- conectar como superusuário (postgres) uma única vez</span></span>
+<span id="cb2-2"><a></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span> fiscalizacao_onibus;</span>
+<span id="cb2-3"><a></a><span class="kw">CREATE</span> <span class="fu">USER</span> onibus <span class="kw">WITH</span> <span class="kw">PASSWORD</span> <span class="st">'senha-do-grupo'</span>;</span>
+<span id="cb2-4"><a></a><span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">PRIVILEGES</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> fiscalizacao_onibus <span class="kw">TO</span> onibus;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Depois disso, todo mundo do grupo conecta em <code>fiscalizacao_&lt;veiculo&gt;</code>, como o usuário do próprio grupo — não mais como superusuário</li>
+<li>Isso é literalmente o item da ementa <strong>“instalação e configuração de um SGBD”</strong> — feito por vocês, não por um provedor de nuvem</li>
+</ul>
 </section>
 <section id="sql-ddl-x-dml" class="slide level2">
 <h2>SQL — DDL x DML</h2>
 <ul>
 <li><strong>DDL</strong> (<em>Data Definition Language</em>) — define a estrutura: <code>CREATE TABLE</code>, <code>ALTER TABLE</code>, <code>DROP TABLE</code></li>
 <li><strong>DML</strong> (<em>Data Manipulation Language</em>) — manipula os dados: <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
-<li>Hoje: primeiro o DDL (criar as 3 tabelas), depois o DML (popular e consultar)</li>
+<li>Hoje: cada papel escreve o DDL da sua tabela e o DML que a popula — a visão geral é esta:</li>
 </ul>
 </section>
-<section id="ddl-criando-as-tabelas" class="slide level2">
-<h2>DDL — criando as tabelas</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> veiculo (</span>
-<span id="cb1-2"><a></a>    <span class="kw">id</span>            SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-3"><a></a>    grupo         <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-4"><a></a>    tipo          <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-5"><a></a>    teto_proprio  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>)          <span class="co">-- NULL = sem teto próprio</span></span>
-<span id="cb1-6"><a></a>);</span>
-<span id="cb1-7"><a></a></span>
-<span id="cb1-8"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> trecho (</span>
-<span id="cb1-9"><a></a>    <span class="kw">id</span>          SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-10"><a></a>    veiculo_id  <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> veiculo(<span class="kw">id</span>),</span>
-<span id="cb1-11"><a></a>    ordem       <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-12"><a></a>    tipo_via    <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-13"><a></a>    limite_via  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-14"><a></a>    <span class="kw">UNIQUE</span> (veiculo_id, ordem)</span>
-<span id="cb1-15"><a></a>);</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ddl-véiculo-e-via-papéis-1-e-2" class="slide level2">
+<h2>DDL — véiculo e via (papéis 1 e 2)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a></a><span class="co">-- Integrante 1</span></span>
+<span id="cb3-2"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> veiculo (</span>
+<span id="cb3-3"><a></a>    <span class="kw">id</span>            SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb3-4"><a></a>    grupo         <span class="dt">VARCHAR</span>(<span class="dv">50</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-5"><a></a>    marca         <span class="dt">VARCHAR</span>(<span class="dv">30</span>),</span>
+<span id="cb3-6"><a></a>    modelo        <span class="dt">VARCHAR</span>(<span class="dv">30</span>),</span>
+<span id="cb3-7"><a></a>    tipo          <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb3-8"><a></a>    teto_proprio  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>)          <span class="co">-- NULL = sem teto próprio</span></span>
+<span id="cb3-9"><a></a>);</span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="co">-- Integrante 2</span></span>
+<span id="cb3-12"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> via (</span>
+<span id="cb3-13"><a></a>    <span class="kw">id</span>            SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb3-14"><a></a>    tipo_via      <span class="dt">VARCHAR</span>(<span class="dv">30</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span>,</span>
+<span id="cb3-15"><a></a>    limite_legal  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb3-16"><a></a>);</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="ddl-a-tabela-de-leituras" class="slide level2">
-<h2>DDL — a tabela de leituras</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> leitura (</span>
-<span id="cb2-2"><a></a>    <span class="kw">id</span>               SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb2-3"><a></a>    veiculo_id       <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> veiculo(<span class="kw">id</span>),</span>
-<span id="cb2-4"><a></a>    trecho_id        <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> trecho(<span class="kw">id</span>),</span>
-<span id="cb2-5"><a></a>    registrado_em    TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> now(),</span>
-<span id="cb2-6"><a></a>    velocidade       <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb2-7"><a></a>    limite_aplicado  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb2-8"><a></a>    infracao         <span class="dt">BOOLEAN</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span></span>
-<span id="cb2-9"><a></a>                        (velocidade <span class="op">&gt;</span> limite_aplicado) STORED</span>
-<span id="cb2-10"><a></a>);</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="ddl-trecho-papel-3" class="slide level2">
+<h2>DDL — trecho (papel 3)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a></a><span class="co">-- Integrante 3 (só roda depois que 1 e 2 já existirem)</span></span>
+<span id="cb4-2"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> trecho (</span>
+<span id="cb4-3"><a></a>    <span class="kw">id</span>          SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb4-4"><a></a>    veiculo_id  <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> veiculo(<span class="kw">id</span>),</span>
+<span id="cb4-5"><a></a>    via_id      <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> via(<span class="kw">id</span>),</span>
+<span id="cb4-6"><a></a>    ordem       <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb4-7"><a></a>    <span class="kw">UNIQUE</span> (veiculo_id, ordem)</span>
+<span id="cb4-8"><a></a>);</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="ddl-leitura-papel-4" class="slide level2">
+<h2>DDL — leitura (papel 4)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a></a><span class="co">-- Integrante 4 (só roda depois que trecho já existir)</span></span>
+<span id="cb5-2"><a></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> leitura (</span>
+<span id="cb5-3"><a></a>    <span class="kw">id</span>               SERIAL <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb5-4"><a></a>    veiculo_id       <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> veiculo(<span class="kw">id</span>),</span>
+<span id="cb5-5"><a></a>    trecho_id        <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">REFERENCES</span> trecho(<span class="kw">id</span>),</span>
+<span id="cb5-6"><a></a>    registrado_em    TIMESTAMPTZ <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">DEFAULT</span> now(),</span>
+<span id="cb5-7"><a></a>    velocidade       <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb5-8"><a></a>    limite_aplicado  <span class="dt">NUMERIC</span>(<span class="dv">5</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb5-9"><a></a>    infracao         <span class="dt">BOOLEAN</span> <span class="kw">GENERATED</span> ALWAYS <span class="kw">AS</span></span>
+<span id="cb5-10"><a></a>                        (velocidade <span class="op">&gt;</span> limite_aplicado) STORED</span>
+<span id="cb5-11"><a></a>);</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -582,64 +644,68 @@ Ricardo Pasquati Pontarolli
 </section>
 <section id="dml-inserindo-dados-de-teste" class="slide level2">
 <h2>DML — inserindo dados de teste</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> veiculo (grupo, tipo, teto_proprio)</span>
-<span id="cb3-2"><a></a><span class="kw">VALUES</span> (<span class="st">'Turma A - Grupo 3'</span>, <span class="st">'onibus'</span>, <span class="dv">90</span>);</span>
-<span id="cb3-3"><a></a></span>
-<span id="cb3-4"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trecho (veiculo_id, ordem, tipo_via, limite_via) <span class="kw">VALUES</span></span>
-<span id="cb3-5"><a></a>  (<span class="dv">1</span>, <span class="dv">1</span>, <span class="st">'local'</span>,    <span class="dv">40</span>),</span>
-<span id="cb3-6"><a></a>  (<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'coletora'</span>, <span class="dv">60</span>),</span>
-<span id="cb3-7"><a></a>  (<span class="dv">1</span>, <span class="dv">3</span>, <span class="st">'arterial'</span>, <span class="dv">80</span>);</span>
-<span id="cb3-8"><a></a></span>
-<span id="cb3-9"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> leitura (veiculo_id, trecho_id, velocidade, limite_aplicado) <span class="kw">VALUES</span></span>
-<span id="cb3-10"><a></a>  (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">38</span>, <span class="dv">40</span>),</span>
-<span id="cb3-11"><a></a>  (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">65</span>, <span class="dv">60</span>),   <span class="co">-- infração</span></span>
-<span id="cb3-12"><a></a>  (<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">95</span>, <span class="dv">80</span>);   <span class="co">-- infração</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> veiculo (grupo, marca, modelo, tipo, teto_proprio)</span>
+<span id="cb6-2"><a></a><span class="kw">VALUES</span> (<span class="st">'Turma A - Grupo 3'</span>, <span class="st">'Marcopolo'</span>, <span class="st">'Viale'</span>, <span class="st">'onibus'</span>, <span class="dv">90</span>);</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> via (tipo_via, limite_legal) <span class="kw">VALUES</span></span>
+<span id="cb6-5"><a></a>  (<span class="st">'local'</span>, <span class="dv">40</span>), (<span class="st">'coletora'</span>, <span class="dv">60</span>), (<span class="st">'arterial'</span>, <span class="dv">80</span>);</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> trecho (veiculo_id, via_id, ordem) <span class="kw">VALUES</span></span>
+<span id="cb6-8"><a></a>  (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>), (<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>);</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a><span class="kw">INSERT</span> <span class="kw">INTO</span> leitura (veiculo_id, trecho_id, velocidade, limite_aplicado) <span class="kw">VALUES</span></span>
+<span id="cb6-11"><a></a>  (<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">38</span>, <span class="dv">40</span>),</span>
+<span id="cb6-12"><a></a>  (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">65</span>, <span class="dv">60</span>),   <span class="co">-- infração</span></span>
+<span id="cb6-13"><a></a>  (<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">95</span>, <span class="dv">80</span>);   <span class="co">-- infração</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="dml-respondendo-as-perguntas-do-início" class="slide level2">
-<h2>DML — respondendo as perguntas do início</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a></a><span class="co">-- infrações por veículo</span></span>
-<span id="cb4-2"><a></a><span class="kw">SELECT</span> v.grupo, v.tipo, <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> l.infracao) <span class="kw">AS</span> infracoes</span>
-<span id="cb4-3"><a></a><span class="kw">FROM</span> veiculo v <span class="kw">JOIN</span> leitura l <span class="kw">ON</span> l.veiculo_id <span class="op">=</span> v.<span class="kw">id</span></span>
-<span id="cb4-4"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> v.grupo, v.tipo</span>
-<span id="cb4-5"><a></a><span class="kw">ORDER</span> <span class="kw">BY</span> infracoes <span class="kw">DESC</span>;</span>
-<span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a><span class="co">-- velocidade média por tipo de via</span></span>
-<span id="cb4-8"><a></a><span class="kw">SELECT</span> t.tipo_via, <span class="fu">avg</span>(l.velocidade) <span class="kw">AS</span> vel_media</span>
-<span id="cb4-9"><a></a><span class="kw">FROM</span> leitura l <span class="kw">JOIN</span> trecho t <span class="kw">ON</span> t.<span class="kw">id</span> <span class="op">=</span> l.trecho_id</span>
-<span id="cb4-10"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> t.tipo_via;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="dml-respondendo-as-perguntas-do-início-papel-5" class="slide level2">
+<h2>DML — respondendo as perguntas do início (papel 5)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a></a><span class="co">-- infrações por veículo</span></span>
+<span id="cb7-2"><a></a><span class="kw">SELECT</span> v.grupo, v.tipo, <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> l.infracao) <span class="kw">AS</span> infracoes</span>
+<span id="cb7-3"><a></a><span class="kw">FROM</span> veiculo v <span class="kw">JOIN</span> leitura l <span class="kw">ON</span> l.veiculo_id <span class="op">=</span> v.<span class="kw">id</span></span>
+<span id="cb7-4"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> v.grupo, v.tipo</span>
+<span id="cb7-5"><a></a><span class="kw">ORDER</span> <span class="kw">BY</span> infracoes <span class="kw">DESC</span>;</span>
+<span id="cb7-6"><a></a></span>
+<span id="cb7-7"><a></a><span class="co">-- velocidade média por tipo de via</span></span>
+<span id="cb7-8"><a></a><span class="kw">SELECT</span> va.tipo_via, <span class="fu">avg</span>(l.velocidade) <span class="kw">AS</span> vel_media</span>
+<span id="cb7-9"><a></a><span class="kw">FROM</span> leitura l</span>
+<span id="cb7-10"><a></a><span class="kw">JOIN</span> trecho t <span class="kw">ON</span> t.<span class="kw">id</span> <span class="op">=</span> l.trecho_id</span>
+<span id="cb7-11"><a></a><span class="kw">JOIN</span> via va <span class="kw">ON</span> va.<span class="kw">id</span> <span class="op">=</span> t.via_id</span>
+<span id="cb7-12"><a></a><span class="kw">GROUP</span> <span class="kw">BY</span> va.tipo_via;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="acesso-em-modo-texto-psql" class="slide level2">
 <h2>Acesso em modo texto — <code>psql</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">psql</span> <span class="st">"postgresql://usuario:senha@ep-xxxx.neon.tech/neondb?sslmode=require"</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a></a>\dt                        <span class="co">-- lista as tabelas</span></span>
-<span id="cb6-2"><a></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> veiculo;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">psql</span> <span class="at">-h</span> rpi-102.local <span class="at">-U</span> onibus <span class="at">-d</span> fiscalizacao_onibus</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a></a>\dt                        <span class="co">-- lista as tabelas</span></span>
+<span id="cb9-2"><a></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> veiculo;</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>O Neon mostra essa string de conexão pronta no painel do projeto</li>
-<li>Funciona do terminal do seu PC ou do próprio Raspberry Pi via SSH</li>
+<li>Funciona do terminal do seu PC (mesma rede Wi-Fi <code>i4</code> do RPi) ou via SSH direto no nó</li>
+<li>Troque <code>rpi-102.local</code> pelo hostname do nó do seu grupo</li>
 </ul>
 </section>
 <section id="acesso-em-modo-gráfico" class="slide level2">
 <h2>Acesso em modo gráfico</h2>
 <ul>
-<li><strong>SQL Editor do Neon</strong> — direto no navegador, sem instalar nada, já vem com o projeto</li>
-<li><strong>DBeaver</strong> ou <strong>pgAdmin</strong> — clientes gráficos instaláveis, mesma string de conexão do <code>psql</code></li>
+<li><strong>DBeaver</strong> ou <strong>pgAdmin</strong> — clientes gráficos gratuitos, instaláveis no PC</li>
+<li>Conexão: host <code>rpi-10X.local</code>, porta <code>5432</code>, banco <code>fiscalizacao_&lt;veiculo&gt;</code>, usuário do grupo</li>
 <li>Vantagem do gráfico: ver a estrutura das tabelas, editar linhas na mão, montar consultas com autocomplete</li>
 </ul>
 </section>
 <section id="acesso-por-uma-aplicação" class="slide level2">
 <h2>Acesso por uma aplicação</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> psycopg2</span>
-<span id="cb7-2"><a></a></span>
-<span id="cb7-3"><a></a>conn <span class="op">=</span> psycopg2.<span class="ex">connect</span>(</span>
-<span id="cb7-4"><a></a>    <span class="st">"postgresql://usuario:senha@ep-xxxx.neon.tech/neondb?sslmode=require"</span></span>
-<span id="cb7-5"><a></a>)</span>
-<span id="cb7-6"><a></a>cur <span class="op">=</span> conn.cursor()</span>
-<span id="cb7-7"><a></a>cur.execute(</span>
-<span id="cb7-8"><a></a>    <span class="st">"INSERT INTO leitura (veiculo_id, trecho_id, velocidade, limite_aplicado) "</span></span>
-<span id="cb7-9"><a></a>    <span class="st">"VALUES (</span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">)"</span>,</span>
-<span id="cb7-10"><a></a>    (<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">63.5</span>, <span class="dv">60</span>),</span>
-<span id="cb7-11"><a></a>)</span>
-<span id="cb7-12"><a></a>conn.commit()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="im">import</span> psycopg2</span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a>conn <span class="op">=</span> psycopg2.<span class="ex">connect</span>(</span>
+<span id="cb10-4"><a></a>    host<span class="op">=</span><span class="st">"rpi-102.local"</span>, dbname<span class="op">=</span><span class="st">"fiscalizacao_onibus"</span>,</span>
+<span id="cb10-5"><a></a>    user<span class="op">=</span><span class="st">"onibus"</span>, password<span class="op">=</span><span class="st">"senha-do-grupo"</span>,</span>
+<span id="cb10-6"><a></a>)</span>
+<span id="cb10-7"><a></a>cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb10-8"><a></a>cur.execute(</span>
+<span id="cb10-9"><a></a>    <span class="st">"INSERT INTO leitura (veiculo_id, trecho_id, velocidade, limite_aplicado) "</span></span>
+<span id="cb10-10"><a></a>    <span class="st">"VALUES (</span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">, </span><span class="sc">%s</span><span class="st">)"</span>,</span>
+<span id="cb10-11"><a></a>    (<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">63.5</span>, <span class="dv">60</span>),</span>
+<span id="cb10-12"><a></a>)</span>
+<span id="cb10-13"><a></a>conn.commit()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -649,35 +715,134 @@ Ricardo Pasquati Pontarolli
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>É exatamente esta chamada — em Node.js, não Python — que o microsserviço de CNVI (Moleculer) vai fazer depois de comparar velocidade x limite. Hoje vocês testam a peça isolada; nas próximas aulas ela se conecta ao resto do pipeline (MQTT → microsserviço → banco).</p>
+<p>É exatamente esta chamada — em Node.js, não Python — que o microsserviço de CNVI (Moleculer) vai fazer depois de comparar velocidade x limite. E agora o destino é o <strong>próprio Raspberry Pi</strong>: o nó de borda processa a leitura e grava no banco que roda ali do lado, sem depender de um serviço externo na internet.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="mão-na-massa-o-banco-do-seu-grupo" class="slide level2">
-<h2>Mão na massa — o banco do seu grupo</h2>
-<p><strong>Agora, em grupo, coloquem o banco de dados do projeto no ar:</strong></p>
+<section id="mão-na-massa-um-banco-cinco-papéis" class="slide level2">
+<h2>Mão na massa — um banco, cinco papéis</h2>
+<ul>
+<li>O banco é <strong>um só por grupo</strong> — mas cada integrante tem uma tabela (ou etapa) sob sua responsabilidade</li>
+<li>Cada papel entrega o <strong>seu próprio arquivo <code>.sql</code></strong>, com <strong>commit no seu próprio nome/usuário GitHub</strong></li>
+<li><strong>Papéis iguais para todos os grupos</strong> — só os dados mudam (ônibus, moto, patinete…); a estrutura da atividade é a mesma</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>A avaliação de hoje é <strong>por papel, não só por grupo</strong>: quem não tiver o próprio arquivo <code>.sql</code> commitado com seu nome não pontua nessa entrega, mesmo que o banco do grupo esteja funcionando.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="antes-dos-papéis-infraestrutura-do-grupo" class="slide level2">
+<h2>Antes dos papéis — infraestrutura do grupo</h2>
 <div class="callout-lab">
 <ol type="1">
-<li>Criar repositório <code>fiscalizacao-&lt;veiculo&gt;-db</code> no GitHub (ex.: <code>fiscalizacao-carro-db</code>)</li>
-<li>Criar um projeto/banco Postgres gratuito em <a href="https://neon.com">neon.com</a></li>
-<li>Ajustar o modelo ER às particularidades do seu veículo e da sua rota (roteiro do Projeto 01)</li>
-<li>Escrever <code>schema.sql</code> com o DDL das 3 tabelas e rodar no SQL Editor do Neon</li>
-<li>Inserir dados de teste: seu veículo, os trechos da rota, pelo menos 5 leituras (com 1+ infração)</li>
-<li>Rodar as duas consultas de agregação (infrações por veículo, velocidade média por trecho)</li>
-<li>Testar o acesso via <code>psql</code> a partir do terminal</li>
-<li>Criar <code>README.md</code> documentando as tabelas — <strong>sem</strong> a senha do banco</li>
-<li>Adicionar <code>pontarolli</code> como colaborador do repositório</li>
-<li><code>commit</code> + <code>push</code> de <code>schema.sql</code>, dos inserts de teste e do <code>README.md</code></li>
+<li>Descubram qual RPi (<code>rpi-102</code> a <code>rpi-106</code>) é o nó do seu grupo</li>
+<li>Confiram se o Postgres já está rodando nele (Portainer → Containers). Se <strong>não</strong> estiver, subam a stack do slide anterior</li>
+<li>Conectem como superusuário e criem o banco + usuário do grupo (<code>CREATE DATABASE</code>, <code>CREATE USER</code>, <code>GRANT</code>)</li>
+<li>Anotem host, porta, nome do banco e usuário — vão precisar disso nos 5 papéis a seguir</li>
+</ol>
+</div>
+</section>
+<section id="os-5-papéis" class="slide level2">
+<h2>Os 5 papéis</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Papel</th>
+<th>Integrante</th>
+<th>Entrega</th>
+<th>Arquivo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 — Veículo</td>
+<td>características do veículo (marca, modelo, teto)</td>
+<td><code>CREATE TABLE veiculo</code> + 1 INSERT</td>
+<td><code>sql/01_veiculo.sql</code></td>
+</tr>
+<tr class="even">
+<td>2 — Legislação</td>
+<td>limite legal de cada tipo de via da rota</td>
+<td><code>CREATE TABLE via</code> + INSERTs</td>
+<td><code>sql/02_via.sql</code></td>
+</tr>
+<tr class="odd">
+<td>3 — Rota</td>
+<td>sequência de vias que o veículo percorre</td>
+<td><code>CREATE TABLE trecho</code> + INSERTs</td>
+<td><code>sql/03_trecho.sql</code></td>
+</tr>
+<tr class="even">
+<td>4 — Leituras</td>
+<td>leituras simuladas de velocidade</td>
+<td><code>CREATE TABLE leitura</code> + INSERTs</td>
+<td><code>sql/04_leitura.sql</code></td>
+</tr>
+<tr class="odd">
+<td>5 — Consultas &amp; Acesso</td>
+<td>agregações + testar os 3 tipos de acesso</td>
+<td><code>sql/05_consultas.sql</code> + <code>README.md</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Grupos com menos de 5 integrantes: combinar papéis próximos (ex.: 1+2, ou 4+5), mas sempre deixando claro no README quem assumiu o quê — a rastreabilidade por commit continua valendo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ordem-de-execução" class="slide level2">
+<h2>Ordem de execução</h2>
+<ol type="1">
+<li class="fragment"><strong>Juntos (5 min):</strong> infraestrutura do slide anterior (banco + usuário do grupo criados)</li>
+<li class="fragment"><strong>Papéis 1 e 2, em paralelo:</strong> cada um escreve e roda seu <code>CREATE TABLE</code> + <code>INSERT</code>, conectado como usuário do grupo</li>
+<li class="fragment"><strong>Papel 3:</strong> só começa depois que 1 e 2 rodaram (precisa dos <code>id</code>s gerados por eles)</li>
+<li class="fragment"><strong>Papel 4:</strong> só começa depois que 3 rodou</li>
+<li class="fragment"><strong>Papel 5:</strong> roda as consultas, testa <code>psql</code> + cliente gráfico + o script Python, e escreve o <code>README.md</code></li>
+</ol>
+<div class="callout-lab">
+<p><strong>Checklist de entrega de cada papel (todos em paralelo desde já):</strong></p>
+<ol type="1">
+<li>Repositório <code>fiscalizacao-&lt;veiculo&gt;-db</code> criado, com <strong>todos os integrantes do grupo</strong> + <code>pontarolli</code> como colaboradores</li>
+<li>Cada integrante escreve seu arquivo em <code>sql/0N_&lt;papel&gt;.sql</code> (DDL + INSERTs da sua tabela)</li>
+<li>O grupo roda os 4 scripts <strong>na ordem</strong> (1→2→3→4) no banco <code>fiscalizacao_&lt;veiculo&gt;</code> do RPi</li>
+<li>Papel 5 roda as 2 consultas de agregação e testa <code>psql</code> + cliente gráfico + o script Python de acesso</li>
+<li>Papel 5 escreve o <code>README.md</code>: schema, papéis, quem fez o quê (nomes), host/porta/banco — <strong>sem senha</strong></li>
+<li>Cada integrante faz <code>commit</code> + <code>push</code> do <strong>seu próprio arquivo</strong>, com seu próprio usuário GitHub</li>
 </ol>
 </div>
 </section>
 <section id="entrega-de-hoje" class="slide level2">
 <h2>Entrega de hoje</h2>
 <ul>
-<li>Link do repositório <code>fiscalizacao-&lt;veiculo&gt;-db</code>, com <code>schema.sql</code> versionado</li>
-<li>Print (ou saída copiada) da consulta de infrações rodando no Neon</li>
-<li><code>pontarolli</code> como colaborador do repositório</li>
+<li>Repositório <code>fiscalizacao-&lt;veiculo&gt;-db</code> com os 5 arquivos em <code>sql/</code>, cada um commitado pelo integrante responsável</li>
+<li><code>README.md</code> com a tabela de papéis preenchida (papel → nome) e os dados de conexão (host/porta/banco, sem senha)</li>
+<li>Print (ou saída copiada) da consulta de infrações rodando no banco do RPi (papel 5)</li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -688,12 +853,13 @@ Ricardo Pasquati Pontarolli
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Sem tempo de terminar tudo? Priorizem 1–7 (banco criado, schema, dados, consultas rodando) — README e colaborador podem fechar em casa, mas o commit de hoje precisa existir.</p>
+<p>Sem tempo de terminar tudo? Priorizem os papéis 1 a 4 rodando no banco (estrutura completa) — papel 5 pode fechar consultas e README em casa, mas cada arquivo <code>.sql</code> precisa existir com o commit de quem o fez.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
 <p>Como cada grupo já tem um repositório do projeto (de CNVI), vale reforçar que este é um repositório <strong>novo e separado</strong>, só para a parte de banco — <code>fiscalizacao-&lt;veiculo&gt;-db</code> — não um branch do repositório de infraestrutura.</p>
+<p>Circular entre os grupos durante o bloco “papéis 1 e 2 em paralelo” — é o momento mais fácil de identificar quem está só observando o colega digitar, em vez de escrever o próprio arquivo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -709,16 +875,29 @@ Ricardo Pasquati Pontarolli
 <section id="boas-práticas-que-já-valem-desde-hoje" class="slide level2">
 <h2>Boas práticas que já valem desde hoje</h2>
 <ul>
-<li><strong>Nunca</strong> commitar a senha do banco no <code>schema.sql</code> ou no <code>README.md</code></li>
-<li>Guardar a string de conexão em variável de ambiente (ou arquivo <code>.env</code> fora do git)</li>
-<li><code>schema.sql</code> só com DDL (estrutura) — os <code>INSERT</code>s de teste podem ir num arquivo separado, ex. <code>dados_teste.sql</code></li>
+<li><strong>Nunca</strong> commitar a senha do banco em nenhum <code>.sql</code> ou no <code>README.md</code></li>
+<li>Guardar a senha em variável de ambiente (ou arquivo <code>.env</code> fora do git)</li>
+<li>Cada arquivo <code>sql/0N_*.sql</code> só com o DDL/DML da tabela daquele papel — não misturar</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>A senha combinada em sala e compartilhada entre os grupos do mesmo nó é uma simplificação proposital para dar suporte em aula — igual ao usuário <code>pi</code>/senha <code>147</code> do próprio Raspberry Pi. Em um sistema de verdade, cada grupo (ou aplicação) teria credenciais só suas.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="próxima-aula" class="slide level2">
 <h2>Próxima aula</h2>
 <ul>
-<li>Trazer o banco do Neon funcionando e testado</li>
-<li>Próxima <strong>CNVI</strong>: o microsserviço passa a gravar cada leitura direto no banco de cada grupo</li>
+<li>Trazer o banco do RPi funcionando e testado</li>
+<li>Próxima <strong>CNVI</strong>: o microsserviço passa a gravar cada leitura direto no banco do RPi de cada grupo</li>
 <li>Próxima <strong>DBDA</strong>: revisão das consultas de agregação e discussão de performance</li>
 </ul>
 </section>
