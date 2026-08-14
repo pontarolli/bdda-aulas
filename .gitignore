@@ -1,0 +1,21 @@
+# Artefatos de build do Quarto (regeneráveis com `quarto render`)
+/.quarto/
+/_site/
+*_files/
+*.html
+
+# Material de terceiros — não faz parte do conteúdo autoral versionado
+/material-professor-anterior/
+/livros/
+
+# Provas e atividades avaliativas (contêm gabarito) — não publicar/versionar
+# no repositório público até o professor decidir o contrário.
+/avaliacoes/
+
+__pycache__/
+*.pyc
+
+# Configuração local do Claude Code (não é conteúdo do curso)
+/.claude/
+
+**/*.quarto_ipynb
