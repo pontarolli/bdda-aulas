@@ -1,5 +1,82 @@
 [
   {
+    "objectID": "atividades/atividade-6-acesso-clientes-aplicacoes.html",
+    "href": "atividades/atividade-6-acesso-clientes-aplicacoes.html",
+    "title": "Atividade Avaliativa 6, Acesso ao Banco de Dados: Clientes e Aplicações",
+    "section": "",
+    "text": "Dica\n\n\n\nComo entregar: use o mesmo repositório da Atividade 1 (veja as instruções e regras completas de entrega). Baixe o arquivo atividade-6.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. Um administrador de banco de dados prefere digitar comandos SQL diretamente em um terminal (ex.: psql) para tarefas rápidas de manutenção, sem precisar abrir uma interface gráfica. Que tipo de acesso ao banco de dados ele está usando?\n\na) Cliente em modo gráfico, pois é sempre mais rápido que o modo texto\nb) Cliente em modo texto (ex.: psql), pois permite executar comandos SQL diretamente via terminal, sem interface gráfica\nc) Acesso via aplicação, pois é a única forma de executar comandos SQL\nd) Nenhuma forma de acesso permite executar comandos diretamente no banco\ne) Cliente em modo texto não existe para bancos de dados relacionais\n\nJustificativa: \n2. Um sistema web de e-commerce precisa consultar e gravar dados no banco automaticamente, toda vez que um cliente faz um pedido, sem que nenhum humano digite comandos SQL manualmente. Que tipo de acesso ao banco de dados esse cenário descreve?\n\na) Cliente em modo texto, pois toda aplicação web depende de um humano digitando os comandos SQL\nb) Acesso ao banco de dados por uma aplicação, usando um driver/biblioteca de conexão que executa comandos SQL automaticamente a partir do código\nc) Cliente em modo gráfico, pois é a única forma de uma aplicação web acessar dados\nd) Não é possível uma aplicação acessar o banco de dados diretamente\ne) DDL, pois toda aplicação usa apenas comandos de definição de estrutura\n\nJustificativa:"
+  },
+  {
+    "objectID": "atividades/atividade-4-sql-ddl.html",
+    "href": "atividades/atividade-4-sql-ddl.html",
+    "title": "Atividade Avaliativa 4, Linguagem SQL e DDL (Data Definition Language)",
+    "section": "",
+    "text": "Dica\n\n\n\nComo entregar: use o mesmo repositório da Atividade 1 (veja as instruções e regras completas de entrega). Baixe o arquivo atividade-4.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. Uma equipe precisa criar, pela primeira vez, a tabela “Cliente” no banco de dados, definindo suas colunas e os tipos de dados de cada uma. Qual comando SQL, e de qual categoria da linguagem, resolve essa tarefa?\n\na) SELECT, comando usado para criar estruturas no banco de dados\nb) CREATE TABLE, comando de DDL (Data Definition Language) usado para definir a estrutura de uma tabela\nc) INSERT, comando usado para criar a estrutura de uma tabela\nd) UPDATE, comando usado para atualizar a definição de uma tabela\ne) A linguagem DDL não é usada para criar tabelas\n\nJustificativa: \n2. A tabela “Cliente” já existe e está em uso, com dados reais. Agora é preciso adicionar uma nova coluna “telefone” a essa tabela, sem apagar nenhum dado já armazenado. Qual comando SQL resolve isso?\n\na) DROP TABLE, pois remove a tabela inteira antes de recriá-la\nb) ALTER TABLE, comando de DDL usado para modificar a estrutura de uma tabela já existente, como adicionar uma coluna\nc) DELETE, comando usado para remover os dados da tabela\nd) SELECT, comando usado para consultar dados sem alterar a estrutura\ne) Não é possível adicionar uma coluna sem recriar a tabela do zero\n\nJustificativa:"
+  },
+  {
+    "objectID": "atividades/atividade-2-requisitos-mer.html",
+    "href": "atividades/atividade-2-requisitos-mer.html",
+    "title": "Atividade Avaliativa 2, Análise de Requisitos e Modelo Entidade-Relacionamento",
+    "section": "",
+    "text": "Dica\n\n\n\nComo entregar: use o mesmo repositório da Atividade 1 (veja as instruções e regras completas de entrega). Baixe o arquivo atividade-2.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. Antes de desenhar o Modelo Entidade-Relacionamento de um sistema de vendas, a equipe entrevista os funcionários da loja para levantar quais informações precisam ser armazenadas (produtos, clientes, pedidos) e quais regras de negócio existem (ex.: um pedido não pode ser fechado sem pelo menos um produto). Qual etapa do projeto de banco de dados corresponde a esse levantamento?\n\na) Modelo físico, pois define diretamente as tabelas do banco de dados\nb) Análise de requisitos, etapa que levanta as informações e regras de negócio junto aos usuários, antes de desenhar o modelo\nc) Linguagem SQL, pois é usada para entrevistar os usuários do sistema\nd) DML, pois manipula os dados já armazenados no banco\ne) Nenhuma etapa de levantamento é necessária antes de desenhar o MER\n\nJustificativa: \n2. No Modelo Entidade-Relacionamento de uma loja, a entidade “Pedido” se relaciona com a entidade “Produto”: um pedido pode conter vários produtos, e um mesmo produto pode aparecer em vários pedidos diferentes. Que tipo de relacionamento é esse?\n\na) Relacionamento um-para-um (1:1), pois cada pedido tem exatamente um produto\nb) Relacionamento muitos-para-muitos (N:N), pois um pedido pode ter vários produtos e um produto pode estar em vários pedidos\nc) Relacionamento um-para-muitos (1:N), pois um produto só pode estar em um único pedido\nd) Não existe relacionamento entre essas duas entidades\ne) Relacionamento muitos-para-um, pois um produto sempre pertence a um único pedido\n\nJustificativa:"
+  },
+  {
+    "objectID": "atividades/0-instrucoes-entrega.html",
+    "href": "atividades/0-instrucoes-entrega.html",
+    "title": "Instruções e Regras de Entrega",
+    "section": "",
+    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente dbda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
+  },
+  {
+    "objectID": "atividades/0-instrucoes-entrega.html#repositório-fazer-uma-única-vez",
+    "href": "atividades/0-instrucoes-entrega.html#repositório-fazer-uma-única-vez",
+    "title": "Instruções e Regras de Entrega",
+    "section": "",
+    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente dbda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
+  },
+  {
+    "objectID": "atividades/0-instrucoes-entrega.html#estrutura-final-do-repositório",
+    "href": "atividades/0-instrucoes-entrega.html#estrutura-final-do-repositório",
+    "title": "Instruções e Regras de Entrega",
+    "section": "Estrutura final do repositório",
+    "text": "Estrutura final do repositório\nAo final das 6 atividades, seu repositório dbda-atividades deve ficar assim:\ndbda-atividades/\n├── README.md\n├── atividade-1.md\n├── atividade-2.md\n├── atividade-3.md\n├── atividade-4.md\n├── atividade-5.md\n└── atividade-6.md\nTodos os arquivos direto na raiz do repositório, sem subpastas e sem mudar os nomes."
+  },
+  {
+    "objectID": "atividades/0-instrucoes-entrega.html#entrega-de-cada-atividade",
+    "href": "atividades/0-instrucoes-entrega.html#entrega-de-cada-atividade",
+    "title": "Instruções e Regras de Entrega",
+    "section": "Entrega de cada atividade",
+    "text": "Entrega de cada atividade\nPara cada uma das 6 atividades:\n\nBaixe o arquivo atividade-N.md correspondente (o link fica na página de cada atividade).\nSalve-o na raiz do repositório, sem mudar o nome do arquivo.\nMarque a alternativa correta de cada questão com um x dentro do checkbox (- [x]).\nPreencha o campo de justificativa de cada questão.\nFaça o commit e o push."
+  },
+  {
+    "objectID": "atividades/0-instrucoes-entrega.html#regra-de-prazo",
+    "href": "atividades/0-instrucoes-entrega.html#regra-de-prazo",
+    "title": "Instruções e Regras de Entrega",
+    "section": "Regra de prazo",
+    "text": "Regra de prazo\n\n\n\n\n\n\nAviso\n\n\n\nSó vale a entrega feita no mesmo dia em que a atividade for aplicada. O professor confere a data pelo histórico de commits do repositório no GitHub, entregas com commit em outro dia não serão consideradas."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Banco de Dados",
+    "section": "",
+    "text": "Curso: Técnico em Redes de Computadores Integrado ao Ensino Médio — 2º ano Câmpus: IFSP Boituva Professor: Ricardo Pasquati Pontarolli (pasquati@ifsp.edu.br)"
+  },
+  {
+    "objectID": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
+    "href": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
+    "title": "Banco de Dados",
+    "section": "Projeto Integrador — Fiscalização de Velocidade sem Radar",
+    "text": "Projeto Integrador — Fiscalização de Velocidade sem Radar\nMódulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtualização e Redes sem Fio.\n\nPersistência dos Dados do Projeto\n\n\n\n\n\n\n\nNota\n\n\n\nNos slides, use as setas do teclado para navegar, S para abrir as notas do professor e O para visão geral dos slides."
+  },
+  {
+    "objectID": "index.html#atividades-avaliativas",
+    "href": "index.html#atividades-avaliativas",
+    "title": "Banco de Dados",
+    "section": "Atividades Avaliativas",
+    "text": "Atividades Avaliativas\nEntrega individual via GitHub. Comece pelas instruções abaixo.\n\nInstruções e Regras de Entrega\nIntrodução a Banco de Dados e Modelos (Conceitual, Lógico e Físico)\nAnálise de Requisitos e Modelo Entidade-Relacionamento\nModelo Relacional e Mapeamento do MER para o Modelo Relacional\nLinguagem SQL e DDL (Data Definition Language)\nDML (Data Manipulation Language) e Instalação e Configuração de SGBD\nAcesso ao Banco de Dados: Clientes e Aplicações"
+  },
+  {
     "objectID": "aulas/01-projeto-fiscalizacao-persistencia.html#objetivos-desta-aula",
     "href": "aulas/01-projeto-fiscalizacao-persistencia.html#objetivos-desta-aula",
     "title": "Persistência dos Dados do Projeto",
@@ -217,17 +294,24 @@
     "text": "Obrigado!"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Banco de Dados",
+    "objectID": "atividades/atividade-1-introducao-modelos-bd.html",
+    "href": "atividades/atividade-1-introducao-modelos-bd.html",
+    "title": "Atividade Avaliativa 1, Introdução a Banco de Dados e Modelos (Conceitual, Lógico e Físico)",
     "section": "",
-    "text": "Curso: Técnico em Redes de Computadores Integrado ao Ensino Médio — 2º ano Câmpus: IFSP Boituva Professor: Ricardo Pasquati Pontarolli (pasquati@ifsp.edu.br)"
+    "text": "Dica\n\n\n\nComo entregar: veja as instruções e regras completas de entrega antes de começar. Baixe o arquivo atividade-1.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. Uma equipe está começando o projeto de um banco de dados e, nessa primeira etapa, desenha apenas as entidades e os relacionamentos do negócio (ex.: “Cliente”, “Pedido”), sem se preocupar ainda com tabelas, colunas ou qual SGBD será usado. Qual modelo essa etapa representa?\n\na) Modelo físico, pois já define os tipos de dados exatos de um SGBD específico\nb) Modelo conceitual, pois representa as entidades e relacionamentos do negócio, independente de qualquer SGBD específico\nc) Modelo lógico, pois já está pronto para ser executado no banco\nd) Nenhum modelo é necessário antes de criar as tabelas\ne) Modelo físico, pois é sempre a primeira etapa de qualquer projeto de banco de dados\n\nJustificativa: \n2. Depois do modelo conceitual, a equipe traduz as entidades e relacionamentos em tabelas, colunas e chaves, mas ainda sem se prender a tipos de dados exatos de um SGBD específico (isso viria só na etapa seguinte). Qual modelo corresponde a essa tradução?\n\na) Modelo lógico, pois traduz o modelo conceitual em tabelas, colunas e chaves, ainda independente do SGBD específico\nb) Modelo físico, pois já é a etapa final, independente de SGBD\nc) Modelo conceitual, pois é a etapa que define os tipos de dados exatos\nd) Não existe diferença entre modelo lógico e modelo físico\ne) Modelo físico é sempre a primeira etapa do projeto de banco de dados\n\nJustificativa:"
   },
   {
-    "objectID": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
-    "href": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
-    "title": "Banco de Dados",
-    "section": "Projeto Integrador — Fiscalização de Velocidade sem Radar",
-    "text": "Projeto Integrador — Fiscalização de Velocidade sem Radar\nMódulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtualização e Redes sem Fio.\n\nPersistência dos Dados do Projeto\n\n\n\n\n\n\n\nNota\n\n\n\nNos slides, use as setas do teclado para navegar, S para abrir as notas do professor e O para visão geral dos slides."
+    "objectID": "atividades/atividade-3-modelo-relacional-mapeamento.html",
+    "href": "atividades/atividade-3-modelo-relacional-mapeamento.html",
+    "title": "Atividade Avaliativa 3, Modelo Relacional e Mapeamento do MER para o Modelo Relacional",
+    "section": "",
+    "text": "Dica\n\n\n\nComo entregar: use o mesmo repositório da Atividade 1 (veja as instruções e regras completas de entrega). Baixe o arquivo atividade-3.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. Em uma tabela do modelo relacional, é preciso garantir que cada linha (registro) possa ser identificada de forma única, sem ambiguidade, mesmo que duas linhas tenham valores parecidos em várias colunas. Qual mecanismo do modelo relacional resolve isso?\n\na) Chave estrangeira, pois identifica unicamente cada linha da tabela\nb) Chave primária, pois identifica de forma única cada linha (registro) de uma tabela no modelo relacional\nc) Índice, pois é o único mecanismo capaz de identificar linhas\nd) Nenhum mecanismo é necessário para identificar linhas de uma tabela\ne) Chave primária e chave estrangeira são exatamente a mesma coisa\n\nJustificativa: \n2. Ao mapear para o modelo relacional um relacionamento muitos-para-muitos (N:N) do Modelo Entidade-Relacionamento (ex.: “Pedido” e “Produto”), qual é a estratégia correta?\n\na) Relacionamentos N:N não podem ser representados no modelo relacional\nb) Criar uma tabela associativa própria, contendo chaves estrangeiras das duas entidades relacionadas\nc) Relacionamentos N:N sempre viram uma única coluna extra na tabela principal\nd) Basta duplicar a entidade em duas tabelas idênticas\ne) Relacionamentos N:N sempre são convertidos em relacionamentos um-para-um (1:1)\n\nJustificativa:"
+  },
+  {
+    "objectID": "atividades/atividade-5-dml-instalacao-sgbd.html",
+    "href": "atividades/atividade-5-dml-instalacao-sgbd.html",
+    "title": "Atividade Avaliativa 5, DML (Data Manipulation Language) e Instalação e Configuração de SGBD",
+    "section": "",
+    "text": "Dica\n\n\n\nComo entregar: use o mesmo repositório da Atividade 1 (veja as instruções e regras completas de entrega). Baixe o arquivo atividade-5.md, marque a alternativa correta no checkbox, preencha a justificativa de cada questão e faça o commit no mesmo dia em que a atividade for aplicada.\n\n\nInstruções: Cada questão vale 5,0 pontos. Marque a alternativa correta no checkbox e preencha o campo de justificativa.\n\n1. A tabela “Cliente” já foi criada no banco de dados, com sua estrutura definida. Agora é preciso inserir um novo registro de cliente, com nome e telefone, dentro dessa tabela. Qual comando SQL, e de qual categoria da linguagem, resolve essa tarefa?\n\na) CREATE TABLE, comando de DDL usado para inserir registros em uma tabela\nb) INSERT INTO, comando de DML (Data Manipulation Language) usado para inserir um novo registro em uma tabela existente\nc) DROP TABLE, comando usado para inserir dados na tabela\nd) A linguagem DML não é usada para inserir dados, apenas para consultá-los\ne) ALTER TABLE, comando usado para alterar os dados já existentes na tabela\n\nJustificativa: \n2. Antes de criar qualquer banco ou tabela, uma equipe precisa instalar um Sistema Gerenciador de Banco de Dados (SGBD) em um servidor, definindo a porta de escuta, o usuário administrador e as regras de acesso remoto. A qual etapa do projeto de banco de dados isso corresponde?\n\na) Instalação e configuração do SGBD, etapa anterior à criação de bancos e tabelas, que prepara o serviço para aceitar conexões\nb) DML, pois toda instalação de SGBD é feita com comandos INSERT\nc) DDL, pois instalar um SGBD é o mesmo que criar uma tabela\nd) Modelo conceitual, pois a instalação do SGBD é sempre a primeira etapa do projeto de dados\ne) Não é necessário configurar nada depois de instalar um SGBD\n\nJustificativa:"
   }
 ]
