@@ -7,19 +7,19 @@
 **1.** Um administrador de banco de dados prefere digitar comandos SQL diretamente em um terminal (ex.: `psql`) para tarefas rápidas de manutenção, sem precisar abrir uma interface gráfica. Que tipo de acesso ao banco de dados ele está usando?
 
 - [ ] a) Cliente em modo gráfico, pois é sempre mais rápido que o modo texto
-- [ ] b) Cliente em modo texto (ex.: `psql`), pois permite executar comandos SQL diretamente via terminal, sem interface gráfica
-- [ ] c) Acesso via aplicação, pois é a única forma de executar comandos SQL
-- [ ] d) Nenhuma forma de acesso permite executar comandos diretamente no banco
-- [ ] e) Cliente em modo texto não existe para bancos de dados relacionais
+- [ ] b) Acesso via aplicação
+- [ ] c) Cliente em modo texto (ex.: `psql`), pois permite executar comandos SQL diretamente pelo terminal, sem qualquer interface gráfica
+- [ ] d) Nenhuma forma de acesso direto existe
+- [ ] e) Cliente em modo texto não existe para bancos de dados relacionais, apenas para bancos não relacionais mais simples
 
 **Justificativa:** <escreva aqui sua justificativa>
 
 **2.** Um sistema web de e-commerce precisa consultar e gravar dados no banco automaticamente, toda vez que um cliente faz um pedido, sem que nenhum humano digite comandos SQL manualmente. Que tipo de acesso ao banco de dados esse cenário descreve?
 
-- [ ] a) Cliente em modo texto, pois toda aplicação web depende de um humano digitando os comandos SQL
-- [ ] b) Acesso ao banco de dados por uma aplicação, usando um driver/biblioteca de conexão que executa comandos SQL automaticamente a partir do código
-- [ ] c) Cliente em modo gráfico, pois é a única forma de uma aplicação web acessar dados
-- [ ] d) Não é possível uma aplicação acessar o banco de dados diretamente
-- [ ] e) DDL, pois toda aplicação usa apenas comandos de definição de estrutura
+- [ ] a) Cliente em modo texto, pois toda aplicação web depende de um humano digitando comandos SQL manualmente no terminal
+- [ ] b) Cliente em modo gráfico
+- [ ] c) DDL, pois toda aplicação usa exclusivamente comandos de definição de estrutura para funcionar corretamente
+- [ ] d) Não é possível uma aplicação acessar o banco
+- [ ] e) Acesso por aplicação, via driver/biblioteca que executa SQL a partir do código
 
 **Justificativa:** <escreva aqui sua justificativa>

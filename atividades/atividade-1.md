@@ -6,20 +6,20 @@
 
 **1.** Uma equipe está começando o projeto de um banco de dados e, nessa primeira etapa, desenha apenas as entidades e os relacionamentos do negócio (ex.: "Cliente", "Pedido"), sem se preocupar ainda com tabelas, colunas ou qual SGBD será usado. Qual modelo essa etapa representa?
 
-- [ ] a) Modelo físico, pois já define os tipos de dados exatos de um SGBD específico
-- [ ] b) Modelo conceitual, pois representa as entidades e relacionamentos do negócio, independente de qualquer SGBD específico
-- [ ] c) Modelo lógico, pois já está pronto para ser executado no banco
-- [ ] d) Nenhum modelo é necessário antes de criar as tabelas
-- [ ] e) Modelo físico, pois é sempre a primeira etapa de qualquer projeto de banco de dados
+- [ ] a) Modelo físico, pois já define os tipos de dados exatos, índices e estruturas de armazenamento específicas de um SGBD
+- [ ] b) Modelo lógico
+- [ ] c) Modelo conceitual, sem se preocupar com tabelas ou SGBD
+- [ ] d) Nenhum modelo é necessário nessa etapa: as tabelas podem ser criadas diretamente, sem qualquer modelagem prévia
+- [ ] e) Modelo físico, por ser sempre a primeira etapa do projeto
 
 **Justificativa:** <escreva aqui sua justificativa>
 
 **2.** Depois do modelo conceitual, a equipe traduz as entidades e relacionamentos em tabelas, colunas e chaves, mas ainda sem se prender a tipos de dados exatos de um SGBD específico (isso viria só na etapa seguinte). Qual modelo corresponde a essa tradução?
 
-- [ ] a) Modelo lógico, pois traduz o modelo conceitual em tabelas, colunas e chaves, ainda independente do SGBD específico
-- [ ] b) Modelo físico, pois já é a etapa final, independente de SGBD
-- [ ] c) Modelo conceitual, pois é a etapa que define os tipos de dados exatos
+- [ ] a) Modelo físico, pois já é a etapa final, independente de SGBD
+- [ ] b) Modelo conceitual
+- [ ] c) Modelo conceitual, pois é a etapa que define os tipos de dados exatos, os índices e as estruturas físicas do banco
 - [ ] d) Não existe diferença entre modelo lógico e modelo físico
-- [ ] e) Modelo físico é sempre a primeira etapa do projeto de banco de dados
+- [ ] e) Modelo lógico, pois traduz o modelo conceitual em tabelas, colunas e chaves, ainda sem se prender aos tipos de dados exatos de um SGBD específico
 
 **Justificativa:** <escreva aqui sua justificativa>

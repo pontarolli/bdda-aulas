@@ -6,20 +6,20 @@
 
 **1.** Uma equipe precisa criar, pela primeira vez, a tabela "Cliente" no banco de dados, definindo suas colunas e os tipos de dados de cada uma. Qual comando SQL, e de qual categoria da linguagem, resolve essa tarefa?
 
-- [ ] a) `SELECT`, comando usado para criar estruturas no banco de dados
-- [ ] b) `CREATE TABLE`, comando de DDL (Data Definition Language) usado para definir a estrutura de uma tabela
-- [ ] c) `INSERT`, comando usado para criar a estrutura de uma tabela
-- [ ] d) `UPDATE`, comando usado para atualizar a definição de uma tabela
-- [ ] e) A linguagem DDL não é usada para criar tabelas
+- [ ] a) `SELECT`, comando usado para consultar dados já existentes no banco
+- [ ] b) `INSERT`, comando de DML usado para inserir registros dentro de uma tabela que já foi criada anteriormente
+- [ ] c) `UPDATE`, comando de DML
+- [ ] d) A linguagem DDL não serve para criar tabelas, apenas para alterar tabelas que já existem no banco de dados
+- [ ] e) `CREATE TABLE`, comando de DDL
 
 **Justificativa:** <escreva aqui sua justificativa>
 
 **2.** A tabela "Cliente" já existe e está em uso, com dados reais. Agora é preciso adicionar uma nova coluna "telefone" a essa tabela, sem apagar nenhum dado já armazenado. Qual comando SQL resolve isso?
 
-- [ ] a) `DROP TABLE`, pois remove a tabela inteira antes de recriá-la
-- [ ] b) `ALTER TABLE`, comando de DDL usado para modificar a estrutura de uma tabela já existente, como adicionar uma coluna
+- [ ] a) `ALTER TABLE`, comando de DDL usado para modificar a estrutura de uma tabela já existente, como adicionar uma nova coluna
+- [ ] b) `DROP TABLE`
 - [ ] c) `DELETE`, comando usado para remover os dados da tabela
-- [ ] d) `SELECT`, comando usado para consultar dados sem alterar a estrutura
-- [ ] e) Não é possível adicionar uma coluna sem recriar a tabela do zero
+- [ ] d) `SELECT`, comando de consulta
+- [ ] e) Não é possível adicionar uma coluna sem apagar a tabela inteira e recriá-la do zero com a nova estrutura
 
 **Justificativa:** <escreva aqui sua justificativa>

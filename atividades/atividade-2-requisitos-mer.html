@@ -4037,20 +4037,20 @@ Dica
 <hr>
 <p><strong>1.</strong> Antes de desenhar o Modelo Entidade-Relacionamento de um sistema de vendas, a equipe entrevista os funcionários da loja para levantar quais informações precisam ser armazenadas (produtos, clientes, pedidos) e quais regras de negócio existem (ex.: um pedido não pode ser fechado sem pelo menos um produto). Qual etapa do projeto de banco de dados corresponde a esse levantamento?</p>
 <ul class="task-list">
-<li><label><input type="checkbox">a) Modelo físico, pois define diretamente as tabelas do banco de dados</label></li>
-<li><label><input type="checkbox">b) Análise de requisitos, etapa que levanta as informações e regras de negócio junto aos usuários, antes de desenhar o modelo</label></li>
-<li><label><input type="checkbox">c) Linguagem SQL, pois é usada para entrevistar os usuários do sistema</label></li>
-<li><label><input type="checkbox">d) DML, pois manipula os dados já armazenados no banco</label></li>
-<li><label><input type="checkbox">e) Nenhuma etapa de levantamento é necessária antes de desenhar o MER</label></li>
+<li><label><input type="checkbox">a) Análise de requisitos, etapa de levantamento de informações e regras junto aos usuários</label></li>
+<li><label><input type="checkbox">b) Modelo físico</label></li>
+<li><label><input type="checkbox">c) Linguagem SQL, pois é a ferramenta usada para entrevistar os usuários e registrar as regras de negócio do sistema</label></li>
+<li><label><input type="checkbox">d) DML, pois manipula os dados armazenados</label></li>
+<li><label><input type="checkbox">e) Nenhuma etapa de levantamento é necessária: basta desenhar diretamente o Modelo Entidade-Relacionamento a partir da experiência da equipe</label></li>
 </ul>
 <p><strong>Justificativa:</strong> <escreva aqui sua justificativa></escreva></p>
 <p><strong>2.</strong> No Modelo Entidade-Relacionamento de uma loja, a entidade “Pedido” se relaciona com a entidade “Produto”: um pedido pode conter vários produtos, e um mesmo produto pode aparecer em vários pedidos diferentes. Que tipo de relacionamento é esse?</p>
 <ul class="task-list">
-<li><label><input type="checkbox">a) Relacionamento um-para-um (1:1), pois cada pedido tem exatamente um produto</label></li>
-<li><label><input type="checkbox">b) Relacionamento muitos-para-muitos (N:N), pois um pedido pode ter vários produtos e um produto pode estar em vários pedidos</label></li>
-<li><label><input type="checkbox">c) Relacionamento um-para-muitos (1:N), pois um produto só pode estar em um único pedido</label></li>
-<li><label><input type="checkbox">d) Não existe relacionamento entre essas duas entidades</label></li>
-<li><label><input type="checkbox">e) Relacionamento muitos-para-um, pois um produto sempre pertence a um único pedido</label></li>
+<li><label><input type="checkbox">a) Relacionamento um-para-um (1:1), pois cada pedido está associado a exatamente um único produto, e vice-versa</label></li>
+<li><label><input type="checkbox">b) Relacionamento um-para-muitos (1:N), pois um produto só pode estar em um único pedido</label></li>
+<li><label><input type="checkbox">c) Não existe relacionamento entre essas entidades</label></li>
+<li><label><input type="checkbox">d) Relacionamento muitos-para-muitos (N:N)</label></li>
+<li><label><input type="checkbox">e) Relacionamento muitos-para-um, pois um produto sempre pertence a um único pedido dentro do sistema de vendas</label></li>
 </ul>
 <p><strong>Justificativa:</strong> <escreva aqui sua justificativa></escreva></p>
 
