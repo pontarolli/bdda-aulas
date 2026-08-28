@@ -74,7 +74,7 @@
     "href": "index.html#atividades-avaliativas",
     "title": "Banco de Dados",
     "section": "Atividades Avaliativas",
-    "text": "Atividades Avaliativas\nEntrega individual via GitHub. Comece pelas instruções abaixo.\n\nInstruções e Regras de Entrega\nIntrodução a Banco de Dados e Modelos (Conceitual, Lógico e Físico) — dia 21/08/2026, das 8h00 às 12h00\nAnálise de Requisitos e Modelo Entidade-Relacionamento (em breve)\nModelo Relacional e Mapeamento do MER para o Modelo Relacional (em breve)\nLinguagem SQL e DDL (Data Definition Language) (em breve)\nDML (Data Manipulation Language) e Instalação e Configuração de SGBD (em breve)\nAcesso ao Banco de Dados: Clientes e Aplicações (em breve)"
+    "text": "Atividades Avaliativas\nEntrega individual via GitHub. Comece pelas instruções abaixo.\n\nInstruções e Regras de Entrega\nIntrodução a Banco de Dados e Modelos (Conceitual, Lógico e Físico) — dia 21/08/2026, das 8h00 às 12h00\nAnálise de Requisitos e Modelo Entidade-Relacionamento\nModelo Relacional e Mapeamento do MER para o Modelo Relacional\nLinguagem SQL e DDL (Data Definition Language) (em breve)\nDML (Data Manipulation Language) e Instalação e Configuração de SGBD (em breve)\nAcesso ao Banco de Dados: Clientes e Aplicações (em breve)"
   },
   {
     "objectID": "aulas/01-projeto-fiscalizacao-persistencia.html#objetivos-desta-aula",
