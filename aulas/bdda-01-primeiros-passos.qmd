@@ -1,0 +1,119 @@
+---
+title: "Primeiros Passos"
+subtitle: "MySQL: Administração de Banco de Dados — Capítulo 1"
+---
+
+## Objetivos desta aula
+
+<!--
+Baseado no Capítulo 1 do PDF "MySQL_Database_Administration_v1_comp.pdf"
+("Getting Started", bookmark 1, págs. 2-5). Texto traduzido do original em
+inglês; conteúdo técnico e estrutura do curso preservados fielmente.
+-->
+
+- Entender como o curso está estruturado e para onde ele caminha
+- Conhecer o projeto fictício que vai guiar os exemplos práticos
+- Alinhar expectativas: o que este curso cobre e o que **não** cobre
+
+::: {.notes}
+Esta é a Aula 1 de uma sequência de 10, uma para cada capítulo do PDF
+"MySQL: Database Administration" (curso original em inglês, Maven
+Analytics/John Pauler). A numeração das aulas desta sequência segue
+exatamente a numeração dos capítulos do PDF — Aula 1 = Capítulo 1, Aula 2
+= Capítulo 2, e assim por diante. O gabarito prático (comandos SQL) já
+está em `mysql/MySQL_Database_Administration.sql`, também organizado
+pelos mesmos 10 capítulos.
+:::
+
+---
+
+## Estrutura do curso
+
+Este é um curso **baseado em projeto**, pensado para quem busca uma
+abordagem prática, mão-na-massa e envolvente para aprender administração
+de banco de dados em MySQL.
+
+::: {.callout-note}
+Ao longo das aulas você vai usar o **MySQL Workbench** tanto para rodar
+comandos SQL quanto para fazer a mesma coisa pela interface gráfica — os
+dois caminhos são mostrados lado a lado sempre que possível.
+:::
+
+## Roteiro do curso (parte 1)
+
+| # | Módulo | O que você vai aprender |
+|---|---|---|
+| 1 | Introdução & Configuração | Bancos relacionais, baixar o MySQL Community Server e o Workbench, criar os bancos do projeto |
+| 2 | Criando Schemas & Tabelas | Criar e apagar schemas, tabelas e colunas pelo Editor do Workbench e por código SQL |
+| 3 | Inserindo, Atualizando & Apagando | Inserir dados em tabelas, e atualizar ou apagar registros específicos com base em critérios lógicos |
+| 4 | Design de Banco de Dados | Relacionamentos entre tabelas, chaves primárias e estrangeiras, e como normalizar um banco corretamente |
+
+## Roteiro do curso (parte 2)
+
+::: {.callout-important}
+## [PROJETO INTERMEDIÁRIO]
+Depois do módulo 4, um projeto prático fecha a primeira metade do curso.
+:::
+
+| # | Módulo | O que você vai aprender |
+|---|---|---|
+| 5 | Conceitos Avançados de DBA | Stored procedures, triggers e índices, e como implementar constraints de unicidade e não-nulo |
+| 6 | Gerenciando Usuários & Permissões | Conceder acesso a usuários adicionais e definir o que eles podem (ou não) fazer no banco |
+
+::: {.callout-important}
+## [PROJETO FINAL]
+O curso se encerra com um projeto final, do zero, aplicando tudo o que
+foi visto nos 6 módulos.
+:::
+
+---
+
+## Apresentando o projeto do curso
+
+::: {.callout-tip}
+## A situação
+Você acabou de ser contratado por uma pequena consultoria de bancos de
+dados. Vai trabalhar em projetos para vários clientes, ajudando-os a
+construir e otimizar seus bancos de dados para o negócio.
+:::
+
+::: {.callout-tip}
+## O resumo
+Como parte da equipe de consultoria, você vai realizar serviços de banco
+de dados para clientes variados. Às vezes vai trabalhar com bancos e
+tabelas já existentes, fazendo pequenas melhorias; outras vezes vai
+precisar montar um banco do zero para um cliente.
+:::
+
+## O objetivo do projeto
+
+Usar o MySQL Workbench para:
+
+- Criar bancos de dados e tabelas que os clientes precisam para rodar seus negócios
+- Aplicar boas práticas de banco de dados para implementar e otimizar princípios de design
+- Atualizar registros, criar índices, triggers e stored procedures, e gerenciar usuários e permissões
+
+---
+
+## Definindo expectativas (1/2)
+
+::: {.incremental}
+1. **Você vai aprender Administração de Banco de Dados em MySQL, usando o MySQL Workbench**
+   - Na sua carreira, você pode usar outros "sabores" de SQL (T-SQL, PL/SQL, PostgreSQL, etc.)
+   - Cada sabor é muito parecido. Os princípios aprendidos aqui se aplicam de forma universal, só a sintaxe muda um pouco
+2. **Vamos focar na criação e manutenção de bancos de dados**
+   - Vamos desenhar e criar schemas e tabelas do zero, e alterar tabelas existentes para melhorá-las
+:::
+
+## Definindo expectativas (2/2)
+
+::: {.incremental}
+3. **Este curso é para iniciantes em SQL e para Analistas de Dados interessados em habilidades de DBA**
+   - O curso começa do básico; se você já é um DBA experiente, este curso não é o mais adequado pra você
+   - Se você já domina o básico, sinta-se livre para pular direto pras partes que forem relevantes
+4. **NÃO vamos aprofundar em análise de dados** *(isso é outro curso)*
+   - Este curso foca em conceitos de nível iniciante de Administração de Banco de Dados, como criar e manter bancos
+   - Existem cursos separados focados em usar SQL para análise de dados e business intelligence
+:::
+
+## Fim da aula
