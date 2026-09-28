@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-6-acesso-clientes-aplicacoes.html</loc>
-    <lastmod>2026-08-20T23:33:41.091Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-6-acesso-clientes-aplicacoes.html</loc>
+    <lastmod>2026-09-28T17:51:23.772Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-4-sql-ddl.html</loc>
-    <lastmod>2026-08-20T23:33:04.236Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-4-sql-ddl.html</loc>
+    <lastmod>2026-09-28T17:51:23.770Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-2-requisitos-mer.html</loc>
-    <lastmod>2026-08-20T23:32:30.261Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-2-requisitos-mer.html</loc>
+    <lastmod>2026-09-28T17:51:23.769Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/0-instrucoes-entrega.html</loc>
-    <lastmod>2026-08-18T19:02:30.120Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/0-instrucoes-entrega.html</loc>
+    <lastmod>2026-09-28T17:51:23.768Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/index.html</loc>
-    <lastmod>2026-08-28T09:03:19.814Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/aulas/01-projeto-fiscalizacao-persistencia.html</loc>
+    <lastmod>2026-09-28T17:51:23.772Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/aulas/01-projeto-fiscalizacao-persistencia.html</loc>
-    <lastmod>2026-08-14T19:54:44.443Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/index.html</loc>
+    <lastmod>2026-09-28T17:52:16.233Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-1-introducao-modelos-bd.html</loc>
-    <lastmod>2026-08-20T23:32:12.552Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/aulas/bdda-01-primeiros-passos.html</loc>
+    <lastmod>2026-09-28T17:52:07.846Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-3-modelo-relacional-mapeamento.html</loc>
-    <lastmod>2026-08-20T23:32:48.767Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-1-introducao-modelos-bd.html</loc>
+    <lastmod>2026-09-28T17:51:23.768Z</lastmod>
   </url>
   <url>
-    <loc>https://pontarolli.github.io/dbda-aulas/atividades/atividade-5-dml-instalacao-sgbd.html</loc>
-    <lastmod>2026-08-20T23:33:21.843Z</lastmod>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-3-modelo-relacional-mapeamento.html</loc>
+    <lastmod>2026-09-28T17:51:23.770Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pontarolli.github.io/bdda-aulas/atividades/atividade-5-dml-instalacao-sgbd.html</loc>
+    <lastmod>2026-09-28T17:51:23.772Z</lastmod>
   </url>
 </urlset>

@@ -1,1 +1,1 @@
-Sitemap: https://pontarolli.github.io/dbda-aulas/sitemap.xml
+Sitemap: https://pontarolli.github.io/bdda-aulas/sitemap.xml

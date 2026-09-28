@@ -56,27 +56,6 @@
     "text": "Regra de prazo\n\n\n\n\n\n\nAviso\n\n\n\nSó vale a entrega feita no mesmo dia em que a atividade for aplicada. O professor confere a data pelo histórico de commits do repositório no GitHub, entregas com commit em outro dia não serão consideradas."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Banco de Dados",
-    "section": "",
-    "text": "Curso: Técnico em Redes de Computadores Integrado ao Ensino Médio — 2º ano Câmpus: IFSP Boituva Professor: Ricardo Pasquati Pontarolli (pasquati@ifsp.edu.br)"
-  },
-  {
-    "objectID": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
-    "href": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
-    "title": "Banco de Dados",
-    "section": "Projeto Integrador — Fiscalização de Velocidade sem Radar",
-    "text": "Projeto Integrador — Fiscalização de Velocidade sem Radar\nMódulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtualização e Redes sem Fio.\n\nPersistência dos Dados do Projeto\n\n\n\n\n\n\n\nNota\n\n\n\nNos slides, use as setas do teclado para navegar, S para abrir as notas do professor e O para visão geral dos slides."
-  },
-  {
-    "objectID": "index.html#atividades-avaliativas",
-    "href": "index.html#atividades-avaliativas",
-    "title": "Banco de Dados",
-    "section": "Atividades Avaliativas",
-    "text": "Atividades Avaliativas\nEntrega individual via GitHub. Comece pelas instruções abaixo.\n\nInstruções e Regras de Entrega\nIntrodução a Banco de Dados e Modelos (Conceitual, Lógico e Físico) — dia 21/08/2026, das 8h00 às 12h00\nAnálise de Requisitos e Modelo Entidade-Relacionamento — dia 28/08/2026, das 8h00 às 12h00\nModelo Relacional e Mapeamento do MER para o Modelo Relacional — dia 28/08/2026, das 8h00 às 12h00\nLinguagem SQL e DDL (Data Definition Language) (em breve)\nDML (Data Manipulation Language) e Instalação e Configuração de SGBD (em breve)\nAcesso ao Banco de Dados: Clientes e Aplicações (em breve)"
-  },
-  {
     "objectID": "aulas/01-projeto-fiscalizacao-persistencia.html#objetivos-desta-aula",
     "href": "aulas/01-projeto-fiscalizacao-persistencia.html#objetivos-desta-aula",
     "title": "Persistência dos Dados do Projeto",
@@ -292,6 +271,97 @@
     "title": "Persistência dos Dados do Projeto",
     "section": "Obrigado!",
     "text": "Obrigado!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Banco de Dados",
+    "section": "",
+    "text": "Curso: Técnico em Redes de Computadores Integrado ao Ensino Médio — 2º ano Câmpus: IFSP Boituva Professor: Ricardo Pasquati Pontarolli (pasquati@ifsp.edu.br)"
+  },
+  {
+    "objectID": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
+    "href": "index.html#projeto-integrador-fiscalização-de-velocidade-sem-radar",
+    "title": "Banco de Dados",
+    "section": "Projeto Integrador — Fiscalização de Velocidade sem Radar",
+    "text": "Projeto Integrador — Fiscalização de Velocidade sem Radar\nMódulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtualização e Redes sem Fio.\n\nPersistência dos Dados do Projeto\n\n\n\n\n\n\n\nNota\n\n\n\nNos slides, use as setas do teclado para navegar, S para abrir as notas do professor e O para visão geral dos slides."
+  },
+  {
+    "objectID": "index.html#mysql-administração-de-banco-de-dados",
+    "href": "index.html#mysql-administração-de-banco-de-dados",
+    "title": "Banco de Dados",
+    "section": "MySQL: Administração de Banco de Dados",
+    "text": "MySQL: Administração de Banco de Dados\nSequência de 10 aulas baseada no curso MySQL: Database Administration (Maven Analytics), traduzida e adaptada — uma aula por capítulo do material original.\n\nPrimeiros Passos\nVisão Geral de SQL e Bancos Relacionais (em breve)\nIntrodução e Configuração do MySQL (em breve)\nCriando e Alterando Schemas & Tabelas (em breve)\nInserindo, Atualizando & Apagando Registros (em breve)\nDesign de Banco de Dados (em breve)\nProjeto Intermediário (em breve)\nConceitos Avançados (em breve)\nGerenciamento de Servidor & Usuários (em breve)\nProjeto Final do Curso (em breve)\n\n\n\n\n\n\n\nNota\n\n\n\nGabarito prático (comandos SQL) desta sequência: mysql/MySQL_Database_Administration.sql."
+  },
+  {
+    "objectID": "index.html#atividades-avaliativas",
+    "href": "index.html#atividades-avaliativas",
+    "title": "Banco de Dados",
+    "section": "Atividades Avaliativas",
+    "text": "Atividades Avaliativas\nEntrega individual via GitHub. Comece pelas instruções abaixo.\n\nInstruções e Regras de Entrega\nIntrodução a Banco de Dados e Modelos (Conceitual, Lógico e Físico) — dia 21/08/2026, das 8h00 às 12h00\nAnálise de Requisitos e Modelo Entidade-Relacionamento — dia 28/08/2026, das 8h00 às 12h00\nModelo Relacional e Mapeamento do MER para o Modelo Relacional — dia 28/08/2026, das 8h00 às 12h00\nLinguagem SQL e DDL (Data Definition Language) (em breve)\nDML (Data Manipulation Language) e Instalação e Configuração de SGBD (em breve)\nAcesso ao Banco de Dados: Clientes e Aplicações (em breve)"
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#objetivos-desta-aula",
+    "href": "aulas/bdda-01-primeiros-passos.html#objetivos-desta-aula",
+    "title": "Primeiros Passos",
+    "section": "Objetivos desta aula",
+    "text": "Objetivos desta aula\n\n\nEntender como o curso está estruturado e para onde ele caminha\nConhecer o projeto fictício que vai guiar os exemplos práticos\nAlinhar expectativas: o que este curso cobre e o que não cobre\n\n\nEsta é a Aula 1 de uma sequência de 10, uma para cada capítulo do PDF “MySQL: Database Administration” (curso original em inglês, Maven Analytics/John Pauler). A numeração das aulas desta sequência segue exatamente a numeração dos capítulos do PDF — Aula 1 = Capítulo 1, Aula 2 = Capítulo 2, e assim por diante. O gabarito prático (comandos SQL) já está em mysql/MySQL_Database_Administration.sql, também organizado pelos mesmos 10 capítulos."
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#estrutura-do-curso",
+    "href": "aulas/bdda-01-primeiros-passos.html#estrutura-do-curso",
+    "title": "Primeiros Passos",
+    "section": "Estrutura do curso",
+    "text": "Estrutura do curso\nEste é um curso baseado em projeto, pensado para quem busca uma abordagem prática, mão-na-massa e envolvente para aprender administração de banco de dados em MySQL.\n\n\n\n\n\n\nNota\n\n\nAo longo das aulas você vai usar o MySQL Workbench tanto para rodar comandos SQL quanto para fazer a mesma coisa pela interface gráfica — os dois caminhos são mostrados lado a lado sempre que possível."
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#roteiro-do-curso-parte-1",
+    "href": "aulas/bdda-01-primeiros-passos.html#roteiro-do-curso-parte-1",
+    "title": "Primeiros Passos",
+    "section": "Roteiro do curso (parte 1)",
+    "text": "Roteiro do curso (parte 1)\n\n\n\n\n\n\n\n\n#\nMódulo\nO que você vai aprender\n\n\n\n\n1\nIntrodução & Configuração\nBancos relacionais, baixar o MySQL Community Server e o Workbench, criar os bancos do projeto\n\n\n2\nCriando Schemas & Tabelas\nCriar e apagar schemas, tabelas e colunas pelo Editor do Workbench e por código SQL\n\n\n3\nInserindo, Atualizando & Apagando\nInserir dados em tabelas, e atualizar ou apagar registros específicos com base em critérios lógicos\n\n\n4\nDesign de Banco de Dados\nRelacionamentos entre tabelas, chaves primárias e estrangeiras, e como normalizar um banco corretamente"
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#roteiro-do-curso-parte-2",
+    "href": "aulas/bdda-01-primeiros-passos.html#roteiro-do-curso-parte-2",
+    "title": "Primeiros Passos",
+    "section": "Roteiro do curso (parte 2)",
+    "text": "Roteiro do curso (parte 2)\n\n\n\n\n\n\n[PROJETO INTERMEDIÁRIO]\n\n\nDepois do módulo 4, um projeto prático fecha a primeira metade do curso.\n\n\n\n\n\n\n\n\n\n\n\n#\nMódulo\nO que você vai aprender\n\n\n\n\n5\nConceitos Avançados de DBA\nStored procedures, triggers e índices, e como implementar constraints de unicidade e não-nulo\n\n\n6\nGerenciando Usuários & Permissões\nConceder acesso a usuários adicionais e definir o que eles podem (ou não) fazer no banco\n\n\n\n\n\n\n\n\n\n[PROJETO FINAL]\n\n\nO curso se encerra com um projeto final, do zero, aplicando tudo o que foi visto nos 6 módulos."
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#apresentando-o-projeto-do-curso",
+    "href": "aulas/bdda-01-primeiros-passos.html#apresentando-o-projeto-do-curso",
+    "title": "Primeiros Passos",
+    "section": "Apresentando o projeto do curso",
+    "text": "Apresentando o projeto do curso\n\n\n\n\n\n\nA situação\n\n\nVocê acabou de ser contratado por uma pequena consultoria de bancos de dados. Vai trabalhar em projetos para vários clientes, ajudando-os a construir e otimizar seus bancos de dados para o negócio.\n\n\n\n\n\n\n\n\n\nO resumo\n\n\nComo parte da equipe de consultoria, você vai realizar serviços de banco de dados para clientes variados. Às vezes vai trabalhar com bancos e tabelas já existentes, fazendo pequenas melhorias; outras vezes vai precisar montar um banco do zero para um cliente."
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#o-objetivo-do-projeto",
+    "href": "aulas/bdda-01-primeiros-passos.html#o-objetivo-do-projeto",
+    "title": "Primeiros Passos",
+    "section": "O objetivo do projeto",
+    "text": "O objetivo do projeto\nUsar o MySQL Workbench para:\n\nCriar bancos de dados e tabelas que os clientes precisam para rodar seus negócios\nAplicar boas práticas de banco de dados para implementar e otimizar princípios de design\nAtualizar registros, criar índices, triggers e stored procedures, e gerenciar usuários e permissões"
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#definindo-expectativas-12",
+    "href": "aulas/bdda-01-primeiros-passos.html#definindo-expectativas-12",
+    "title": "Primeiros Passos",
+    "section": "Definindo expectativas (1/2)",
+    "text": "Definindo expectativas (1/2)\n\nVocê vai aprender Administração de Banco de Dados em MySQL, usando o MySQL Workbench\n\nNa sua carreira, você pode usar outros “sabores” de SQL (T-SQL, PL/SQL, PostgreSQL, etc.)\nCada sabor é muito parecido. Os princípios aprendidos aqui se aplicam de forma universal, só a sintaxe muda um pouco\n\nVamos focar na criação e manutenção de bancos de dados\n\nVamos desenhar e criar schemas e tabelas do zero, e alterar tabelas existentes para melhorá-las"
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#definindo-expectativas-22",
+    "href": "aulas/bdda-01-primeiros-passos.html#definindo-expectativas-22",
+    "title": "Primeiros Passos",
+    "section": "Definindo expectativas (2/2)",
+    "text": "Definindo expectativas (2/2)\n\nEste curso é para iniciantes em SQL e para Analistas de Dados interessados em habilidades de DBA\n\nO curso começa do básico; se você já é um DBA experiente, este curso não é o mais adequado pra você\nSe você já domina o básico, sinta-se livre para pular direto pras partes que forem relevantes\n\nNÃO vamos aprofundar em análise de dados (isso é outro curso)\n\nEste curso foca em conceitos de nível iniciante de Administração de Banco de Dados, como criar e manter bancos\nExistem cursos separados focados em usar SQL para análise de dados e business intelligence"
+  },
+  {
+    "objectID": "aulas/bdda-01-primeiros-passos.html#fim-da-aula",
+    "href": "aulas/bdda-01-primeiros-passos.html#fim-da-aula",
+    "title": "Primeiros Passos",
+    "section": "Fim da aula",
+    "text": "Fim da aula"
   },
   {
     "objectID": "atividades/atividade-1-introducao-modelos-bd.html",
