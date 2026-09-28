@@ -25,21 +25,21 @@
     "href": "atividades/0-instrucoes-entrega.html",
     "title": "Instruções e Regras de Entrega",
     "section": "",
-    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente dbda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
+    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente bdda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
   },
   {
     "objectID": "atividades/0-instrucoes-entrega.html#repositório-fazer-uma-única-vez",
     "href": "atividades/0-instrucoes-entrega.html#repositório-fazer-uma-única-vez",
     "title": "Instruções e Regras de Entrega",
     "section": "",
-    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente dbda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
+    "text": "Crie um repositório privado no GitHub, na sua conta pessoal, com o nome exatamente bdda-atividades (todos os alunos devem usar esse mesmo nome, para facilitar a conferência).\nBaixe o arquivo README.md, salve-o na raiz do repositório e preencha o campo com seu nome completo.\nEm Settings → Collaborators → Add people, adicione o professor como colaborador: github.com/pontarolli.\n\nEsse repositório é único para a disciplina e será reaproveitado nas 6 atividades."
   },
   {
     "objectID": "atividades/0-instrucoes-entrega.html#estrutura-final-do-repositório",
     "href": "atividades/0-instrucoes-entrega.html#estrutura-final-do-repositório",
     "title": "Instruções e Regras de Entrega",
     "section": "Estrutura final do repositório",
-    "text": "Estrutura final do repositório\nAo final das 6 atividades, seu repositório dbda-atividades deve ficar assim:\ndbda-atividades/\n├── README.md\n├── atividade-1.md\n├── atividade-2.md\n├── atividade-3.md\n├── atividade-4.md\n├── atividade-5.md\n└── atividade-6.md\nTodos os arquivos direto na raiz do repositório, sem subpastas e sem mudar os nomes."
+    "text": "Estrutura final do repositório\nAo final das 6 atividades, seu repositório bdda-atividades deve ficar assim:\nbdda-atividades/\n├── README.md\n├── atividade-1.md\n├── atividade-2.md\n├── atividade-3.md\n├── atividade-4.md\n├── atividade-5.md\n└── atividade-6.md\nTodos os arquivos direto na raiz do repositório, sem subpastas e sem mudar os nomes."
   },
   {
     "objectID": "atividades/0-instrucoes-entrega.html#entrega-de-cada-atividade",
@@ -263,7 +263,7 @@
     "href": "aulas/01-projeto-fiscalizacao-persistencia.html#próxima-aula",
     "title": "Persistência dos Dados do Projeto",
     "section": "Próxima aula",
-    "text": "Próxima aula\n\nTrazer o banco do RPi funcionando e testado\nPróxima CNVI: o microsserviço passa a gravar cada leitura direto no banco do RPi de cada grupo\nPróxima DBDA: revisão das consultas de agregação e discussão de performance"
+    "text": "Próxima aula\n\nTrazer o banco do RPi funcionando e testado\nPróxima CNVI: o microsserviço passa a gravar cada leitura direto no banco do RPi de cada grupo\nPróxima BDDA: revisão das consultas de agregação e discussão de performance"
   },
   {
     "objectID": "aulas/01-projeto-fiscalizacao-persistencia.html#obrigado",
@@ -285,13 +285,6 @@
     "title": "Banco de Dados",
     "section": "Projeto Integrador — Fiscalização de Velocidade sem Radar",
     "text": "Projeto Integrador — Fiscalização de Velocidade sem Radar\nMódulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtualização e Redes sem Fio.\n\nPersistência dos Dados do Projeto\n\n\n\n\n\n\n\nNota\n\n\n\nNos slides, use as setas do teclado para navegar, S para abrir as notas do professor e O para visão geral dos slides."
-  },
-  {
-    "objectID": "index.html#mysql-administração-de-banco-de-dados",
-    "href": "index.html#mysql-administração-de-banco-de-dados",
-    "title": "Banco de Dados",
-    "section": "MySQL: Administração de Banco de Dados",
-    "text": "MySQL: Administração de Banco de Dados\nSequência de 10 aulas baseada no curso MySQL: Database Administration (Maven Analytics), traduzida e adaptada — uma aula por capítulo do material original.\n\nPrimeiros Passos\nVisão Geral de SQL e Bancos Relacionais (em breve)\nIntrodução e Configuração do MySQL (em breve)\nCriando e Alterando Schemas & Tabelas (em breve)\nInserindo, Atualizando & Apagando Registros (em breve)\nDesign de Banco de Dados (em breve)\nProjeto Intermediário (em breve)\nConceitos Avançados (em breve)\nGerenciamento de Servidor & Usuários (em breve)\nProjeto Final do Curso (em breve)\n\n\n\n\n\n\n\nNota\n\n\n\nGabarito prático (comandos SQL) desta sequência: mysql/MySQL_Database_Administration.sql."
   },
   {
     "objectID": "index.html#atividades-avaliativas",
