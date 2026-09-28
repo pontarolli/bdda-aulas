@@ -9,7 +9,7 @@ project:
 website:
   title: "Banco de Dados"
   page-navigation: false
-  repo-url: https://github.com/pontarolli/dbda-aulas
+  repo-url: https://github.com/pontarolli/bdda-aulas
   page-footer:
     left: "IFSP Boituva · Técnico em Redes de Computadores"
     right: "Ricardo Pasquati Pontarolli"
@@ -20,8 +20,8 @@ format:
   revealjs:
     theme: [default, theme/ifsp.scss]
     slide-number: c/t
-    transition: slide
-    background-transition: fade
+    transition: none
+    background-transition: none
     incremental: false
     center-title-slide: true
     preview-links: auto

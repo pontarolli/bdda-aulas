@@ -19,6 +19,27 @@ Módulo prático com Raspberry Pi, em conjunto com Computação em Nuvem e Virtu
 Nos slides, use as setas do teclado para navegar, **S** para abrir as notas do professor e **O** para visão geral dos slides.
 :::
 
+## MySQL: Administração de Banco de Dados
+
+Sequência de 10 aulas baseada no curso *MySQL: Database Administration*
+(Maven Analytics), traduzida e adaptada — uma aula por capítulo do material
+original.
+
+1. [Primeiros Passos](aulas/bdda-01-primeiros-passos.html)
+2. Visão Geral de SQL e Bancos Relacionais (em breve)
+3. Introdução e Configuração do MySQL (em breve)
+4. Criando e Alterando Schemas & Tabelas (em breve)
+5. Inserindo, Atualizando & Apagando Registros (em breve)
+6. Design de Banco de Dados (em breve)
+7. Projeto Intermediário (em breve)
+8. Conceitos Avançados (em breve)
+9. Gerenciamento de Servidor & Usuários (em breve)
+10. Projeto Final do Curso (em breve)
+
+::: {.callout-note}
+Gabarito prático (comandos SQL) desta sequência: [`mysql/MySQL_Database_Administration.sql`](https://github.com/pontarolli/bdda-aulas/blob/master/mysql/MySQL_Database_Administration.sql).
+:::
+
 ## Atividades Avaliativas
 
 Entrega individual via GitHub. Comece pelas instruções abaixo.
